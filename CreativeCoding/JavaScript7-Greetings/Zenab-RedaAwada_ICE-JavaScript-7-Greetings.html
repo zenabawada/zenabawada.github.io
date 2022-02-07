@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />		
+    <title>Exercise 7</title>		
+</head>
+<body>
+    <h1>Module 7: Control Structures</h1>    
+    <p>Controlling the flow of logic with <em>if</em> statements and <em>switch</em> statements.</p>
+    
+    <h2>Getting Time &amp; Date from the JavaScript Date Object</h2>
+    <p><code>var today = new Date();</code> gives us a timestamp of the current time and date on the client computer. From this variable we can get <a href="https://www.w3schools.com/js/js_date_methods.asp" target="_blank">all kinds of time/date information</a>.</p>
+
+    <script>
+    var today = new Date();
+    var day = today.getDay ();
+    var hour = today.getHours();
+    
+
+    // If before noon output “Good Morning”
+    if (hour < 12){
+        alert('Good Morning!');
+    }
+    
+    // If after noon output “Good Afternoon”
+    if (hour > 12){
+        alert('Good Afternoon!');
+    }
+    
+
+
+    // If Monday, output “Do you have a case of the Mondays?”
+    if (day === 1){
+        alert ('Do you have a case of the Mondays?');
+    } 
+    else {
+        alert ('See you next Monday!');
+    }
+
+    // var dayMonday = prompt('Do you have a case of the Mondays?', 'Yes or No');
+
+    // switch (dayMonday){
+    //     case 'Yes':
+    //         alert('Thank you!');
+    //         break;
+    //     case 'No':
+    //         alert('See you next Monday!');
+    //         break;
+    //     default:
+    //         alert('Incorrect value');
+    //         break;
+    // }
+
+    </script>
+</body>
+</html>
