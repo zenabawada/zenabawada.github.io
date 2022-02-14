@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Loops Exercise</title>
+  </head>
+  <body>
+    <h1>JavaScript Loops Exercise</h1>
+<script>
+// Create an empty array...
+var links = new Array();
+
+// Populate the array...
+links[0] = new Array();
+links[0]["linkName"] = "W3Schools";
+links[0]["linkLogo"] = "http://www.w3schools.com/images/w3schools.png";
+links[0]["linkURL"] = "http://www.w3schools.com/";
+links[0]["linkDescription"] = "W3Schools is a web developer information website, with tutorials and references relating to web development topics such as HTML, CSS, JavaScript and PHP.";
+ 
+links[1] = new Array();
+links[1]["linkName"] = "Codecademy";
+links[1]["linkLogo"] = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Codecademy.svg/285px-Codecademy.svg.png";
+links[1]["linkURL"] = "https://www.codecademy.com/";
+links[1]["linkDescription"] = "Codecademy is an online interactive platform that offers free coding classes in 9 different programming languages.";
+ 
+links[2] = new Array();
+links[2]["linkName"] = "W3C";
+links[2]["linkLogo"] = "http://www.w3.org/2008/site/images/logo-w3c-mobile-lg";
+links[2]["linkURL"] = "http://www.w3.org/";
+links[2]["linkDescription"] = "The World Wide Web Consortium is the main international standards organization for the World Wide Web.";
+
+// Output to the web page from the array...
+// Your code here
+
+for (var i = 0; i < links.length; i++) {
+  document.write("<h2>" + links[i]["linkName"] + "</h2>");
+  document.write("<img src='" + links[i]["linkLogo"] + "'/>");
+  document.write("<p>" + links[i]["linkDescription"] + "</p>");
+  document.write("<a href='" + links[i]["linkURL"] + "' target=_blank>website</a>");
+}
+
+</script>
+  </body>
+</html>
