@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="body-structure">
+    <header>
+        <h1 id="name" onmouseover="changeColor(this, 'orange')" onmouseout="resetColor(this)">zena awada</h1>
+        <nav>
+            <a onmouseover="changeColor(this, 'blue')" onmouseout="resetColor(this)" href="#about">about</a></li>
+            <a href="#projects">projects</a></li>
+            <a href="#contact">contact</a></li>
+            <a href="#illustration">illustration</a></li>
+            <a href="#materials">materials</a></li>
+        </nav>
+        <h2 id="about" onmouseover="changeColor(this, 'red')" onmouseout="resetColor(this)"> quick contact</h2>
+
+        <form name="contactForm" onsubmit="return validateForm()">
+            <input type="text" placeholder="Please type your message" name="formText">
+            <input type="submit" value="Submit">
+        </form>
+    </header>
+
+    <main>
+        <img id="myImg" src="images/aptview.jpg" onclick="ModalImage(this)" alt="Apartment view">
+
+        <div id="modalBlock" class="modal">
+            <div id="modalBody" class="modal-body">
+                <img id="img01" class="modal-image">
+                <p id="modalParagraph" class="modal-paragraph">This is an example of my work.</p>
+                <button id="showContent" class="content-button">Show more</button>
+                <span class="close">&times;</span>
+            </div>
+        </div> 
+
+        <img id="myImg" src="images/aptview.jpg" onclick="ModalImage(this)" alt="Apartment view">
+        <div id="modalBlock" class="modal">
+            <img id="img02" class="modal-image">
+            <span class="close">&times;</span>
+        </div> 
+
+
+    </main>
+    </div>
+
+    <script src="javascript/script.js"></script>
+</body>
+</html>
