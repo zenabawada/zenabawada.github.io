@@ -1,6 +1,6 @@
 @font-face {
   font-family: "prstartk";
-  src: url("/fonts/prstartk.ttf");
+  src: url("./fonts/prstartk.ttf");
 }
 
 html {
