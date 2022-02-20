@@ -1,0 +1,323 @@
+@font-face {
+  font-family: "prstartk";
+  src: url("/fonts/prstartk.ttf");
+}
+
+body {
+  color: white;
+  margin: 0;
+  background-color: black;
+  text-transform: uppercase;
+  font-family: "prstartk";
+  font-size: 14pt;
+}
+
+.home-section {
+  margin-bottom: 100px;
+}
+
+nav {
+  /* margin: 20px; */
+  text-align: center;
+  position: fixed;
+  background-color: black;
+  padding: 8px 0;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+nav a {
+  display: inline;
+  padding: 50px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+nav a:hover {
+  color: #f9ed3f;
+}
+
+.logo {
+  display: block;
+  margin: 60px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.animation-home {
+  /* text-align: center;
+  justify-content: right; */
+  padding: 10px 0 40px 0;
+  animation: loop 6s linear infinite;
+  /* max-width: 400px; */
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-60vw);
+  }
+}
+
+/* @keyframes loop {
+  0% {
+    right: 0px;
+    top: 0px;
+  }
+  100% {
+    right: 1000px;
+    top: 0px;
+  }
+} */
+
+.animation-home :nth-child(1) {
+  padding-left: 50px;
+}
+
+.pacman-gif {
+  transform: scaleX(-1);
+}
+
+.pacman-gif,
+.pinky,
+.inky,
+.blinky,
+.clyde,
+.eaten {
+  height: 40px;
+  padding: 2px;
+  grid-area: ghost;
+}
+
+.home-title {
+  text-align: center;
+  animation: blink 2s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+hr {
+  border: 1px solid #f9ed3f;
+}
+
+h2 {
+  font-size: 14pt;
+  text-align: center;
+}
+
+.highscores-table {
+  width: 100%;
+}
+
+.highscores-table th {
+  width: 33%;
+  height: 60px;
+}
+
+.high-scores-section {
+  text-align: center;
+  justify-content: center;
+  padding: 100px 20px;
+}
+
+.high-scores-section h1 {
+  color: #f9ed3f;
+  padding-bottom: 20px;
+}
+
+.highscores-table tr {
+  margin-bottom: 100px;
+}
+
+.highscores-table tr:nth-child(4n + 2) {
+  color: #ffd300;
+}
+
+.highscores-table tr:nth-child(4n + 3) {
+  color: #ff0401;
+}
+
+.highscores-table tr:nth-child(4n + 4) {
+  color: #01f8f8;
+}
+
+.highscores-table tr:nth-child(4n + 5) {
+  color: #ff60b0;
+}
+
+/* .highscores-body li:nth-child(4n + 1) {
+  color: #ffd300;
+}
+
+.highscores-body li:nth-child(4n + 2) {
+  color: #ff0401;
+}
+
+.highscores-body li:nth-child(4n + 3) {
+  color: #01f8f8;
+}
+
+.highscores-body li:nth-child(4n + 4) {
+  color: #ff60b0;
+} */
+
+.animation-instructions img:nth-child(1) {
+  transform: none;
+  padding-left: 0;
+  padding-right: 50px;
+}
+
+.animation-instructions {
+  animation: reverse-loop 5s linear infinite;
+  padding: 10px 0 40px 0;
+}
+
+@keyframes reverse-loop {
+  from {
+    transform: translateX(-60vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.highlight {
+  color: #ffd300;
+  text-transform: uppercase;
+}
+
+.instructions-section {
+  max-width: 800px;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px;
+  margin: 0 auto;
+}
+
+.instructions-section p {
+  text-transform: lowercase;
+  display: inline;
+  inline-size: 150px;
+  writing-mode: horizontal-tb;
+  line-height: 20px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.instructions-section h2 {
+  margin-bottom: 30px;
+}
+
+.players-section {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px;
+  width: 700px;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.players-list,
+.players-title {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: auto;
+  padding: 15px;
+  font-size: 14pt;
+  margin: 0 auto;
+}
+
+.players-title {
+  padding-right: 100px;
+}
+
+.players-character {
+  grid-area: character;
+}
+
+.players-nickname {
+  grid-area: nickname;
+}
+
+.players-ul {
+  justify-content: center;
+  /* padding: 0; */
+  box-sizing: border-box;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.players-ul li {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 5fr;
+  grid-template-rows: auto;
+  grid-template-areas: "ghost character nickname";
+}
+
+.players-ul img {
+  transform: scaleX(-1);
+}
+
+.players-ul li:nth-of-type(1) {
+  color: #ff0401;
+}
+
+.players-ul li:nth-of-type(2) {
+  color: #ff60b0;
+}
+
+.players-ul li:nth-of-type(3) {
+  color: #01f8f8;
+}
+
+.players-ul li:nth-of-type(4) {
+  color: #ffd300;
+}
+
+.eaten-points,
+.high-points,
+.low-points {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  padding: 15px;
+}
+
+.points h2 {
+  padding-right: 20px;
+}
+
+.high-block {
+  width: 20px;
+  height: 20px;
+  background-color: #f9ed3f;
+}
+
+.low-block {
+  width: 10px;
+  height: 10px;
+  background-color: #f9ed3f;
+}
+
+.footer-section h3 {
+  text-align: center;
+  font-size: 6pt;
+  line-height: 12px;
+}
