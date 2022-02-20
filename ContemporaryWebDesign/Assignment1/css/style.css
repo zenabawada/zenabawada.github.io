@@ -1,10 +1,10 @@
 @font-face {
-  font-family: prstartk;
-  src: url("/fonts/prstartk.ttf");
+  font-family: "prstartk";
+  src: url("../fonts/prstartk.ttf");
 }
 
 html {
-  font-family: prstartk;
+  font-family: "prstartk";
 }
 
 body {
@@ -12,6 +12,7 @@ body {
   margin: 0;
   background-color: black;
   text-transform: uppercase;
+  font-family: "prstartk";
   font-size: 14pt;
 }
 
