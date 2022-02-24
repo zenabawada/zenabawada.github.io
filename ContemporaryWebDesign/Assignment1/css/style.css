@@ -18,6 +18,7 @@ body {
 
 .home-section {
   margin-bottom: 100px;
+  overflow: hidden;
 }
 
 nav {
@@ -56,8 +57,18 @@ nav a:hover {
   justify-content: right; */
   padding: 10px 0 40px 0;
   animation: loop 6s linear infinite;
+  overflow: hidden;
   /* max-width: 400px; */
 }
+/* 
+@keyframes loop {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(1000px);
+  }
+} */
 
 @keyframes loop {
   0% {
@@ -118,14 +129,20 @@ h2 {
   text-align: center;
 }
 
-.highscores-table {
+.high-scores,
+.highscores-title {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* .highscores-table {
   width: 100%;
 }
 
 .highscores-table th {
   width: 33%;
   height: 60px;
-}
+} */
 
 .high-scores-section {
   text-align: center;
@@ -138,7 +155,7 @@ h2 {
   padding-bottom: 20px;
 }
 
-.highscores-table tr {
+/* .highscores-table tr {
   margin-bottom: 100px;
 }
 
@@ -156,9 +173,16 @@ h2 {
 
 .highscores-table tr:nth-child(4n + 5) {
   color: #ff60b0;
+} */
+
+.highscores-block div {
+  width: 200px;
+  margin: 5px 0;
+  text-align: center;
+  /* border: solid blue 1px; */
 }
 
-/* .highscores-body li:nth-child(4n + 1) {
+.highscores-body li:nth-child(4n + 1) {
   color: #ffd300;
 }
 
@@ -172,7 +196,7 @@ h2 {
 
 .highscores-body li:nth-child(4n + 4) {
   color: #ff60b0;
-} */
+}
 
 .animation-instructions img:nth-child(1) {
   transform: none;
@@ -183,6 +207,7 @@ h2 {
 .animation-instructions {
   animation: reverse-loop 5s linear infinite;
   padding: 10px 0 40px 0;
+  overflow: hidden;
 }
 
 @keyframes reverse-loop {
@@ -200,10 +225,17 @@ h2 {
 }
 
 .instructions-section {
-  max-width: 800px;
   justify-content: center;
   text-align: center;
   padding: 100px 20px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.instructions-box {
+  width: 800px;
+  justify-content: center;
+  text-align: center;
   margin: 0 auto;
 }
 
