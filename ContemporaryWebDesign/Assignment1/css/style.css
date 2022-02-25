@@ -134,6 +134,8 @@ h2 {
 
 .highscores-block ul {
   padding-inline-start: 0;
+  justify-content: space-around;
+  margin: 0 auto;
 }
 
 .highscores-block div {
