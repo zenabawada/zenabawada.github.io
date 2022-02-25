@@ -22,7 +22,6 @@ body {
 }
 
 nav {
-  /* margin: 20px; */
   text-align: center;
   position: fixed;
   background-color: black;
@@ -53,22 +52,27 @@ nav a:hover {
 }
 
 .animation-home {
-  /* text-align: center;
-  justify-content: right; */
   padding: 10px 0 40px 0;
-  animation: loop 6s linear infinite;
+  animation: loop 5s linear infinite;
   overflow: hidden;
-  /* max-width: 400px; */
 }
-/* 
-@keyframes loop {
+
+.animation-home img:nth-child(1) {
+  padding-left: 50px;
+}
+
+.pacman-gif {
+  animation: pacman-ghost 5s linear infinite;
+}
+
+@keyframes pacman-ghost {
   0% {
-    transform: translateX(-1000px);
+    transform: translateX(0) scaleX(-1);
   }
   100% {
-    transform: translateX(1000px);
+    transform: translateX(60px) scaleX(-1);
   }
-} */
+}
 
 @keyframes loop {
   0% {
@@ -79,26 +83,8 @@ nav a:hover {
   }
 }
 
-/* @keyframes loop {
-  0% {
-    right: 0px;
-    top: 0px;
-  }
-  100% {
-    right: 1000px;
-    top: 0px;
-  }
-} */
-
-.animation-home :nth-child(1) {
-  padding-left: 50px;
-}
-
-.pacman-gif {
-  transform: scaleX(-1);
-}
-
 .pacman-gif,
+.pacman-gif-eaten,
 .pinky,
 .inky,
 .blinky,
@@ -135,15 +121,6 @@ h2 {
   justify-content: space-around;
 }
 
-/* .highscores-table {
-  width: 100%;
-}
-
-.highscores-table th {
-  width: 33%;
-  height: 60px;
-} */
-
 .high-scores-section {
   text-align: center;
   justify-content: center;
@@ -154,26 +131,6 @@ h2 {
   color: #f9ed3f;
   padding-bottom: 20px;
 }
-
-/* .highscores-table tr {
-  margin-bottom: 100px;
-}
-
-.highscores-table tr:nth-child(4n + 2) {
-  color: #ffd300;
-}
-
-.highscores-table tr:nth-child(4n + 3) {
-  color: #ff0401;
-}
-
-.highscores-table tr:nth-child(4n + 4) {
-  color: #01f8f8;
-}
-
-.highscores-table tr:nth-child(4n + 5) {
-  color: #ff60b0;
-} */
 
 .highscores-block div {
   width: 200px;
@@ -199,8 +156,6 @@ h2 {
 }
 
 .animation-instructions img:nth-child(1) {
-  transform: none;
-  padding-left: 0;
   padding-right: 50px;
 }
 
@@ -208,6 +163,19 @@ h2 {
   animation: reverse-loop 5s linear infinite;
   padding: 10px 0 40px 0;
   overflow: hidden;
+}
+
+.pacman-gif-eaten {
+  animation: pacman 5s linear infinite;
+}
+
+@keyframes pacman {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(60px);
+  }
 }
 
 @keyframes reverse-loop {
@@ -289,7 +257,6 @@ h2 {
 
 .players-ul {
   justify-content: center;
-  /* padding: 0; */
   box-sizing: border-box;
   width: 600px;
   margin-left: auto;
