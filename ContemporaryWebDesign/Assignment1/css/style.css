@@ -132,11 +132,14 @@ h2 {
   padding-bottom: 20px;
 }
 
+.highscores-block ul {
+  padding-inline-start: 0;
+}
+
 .highscores-block div {
   width: 200px;
   margin: 5px 0;
   text-align: center;
-  /* border: solid blue 1px; */
 }
 
 .highscores-body li:nth-child(4n + 1) {
