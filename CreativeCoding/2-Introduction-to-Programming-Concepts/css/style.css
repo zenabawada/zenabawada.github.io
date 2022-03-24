@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap");
+
+body {
+  background-color: white;
+  color: white;
+  font-family: "Anonymous Pro", monospace;
+  overflow: hidden;
+}
+
+/* Main Content Style */
+.main {
+  display: flex;
+  background-color: black;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  max-width: 400px;
+  align-items: center;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.current-age {
+  color: yellow;
+}
+
+.main h1 {
+  text-align: center;
+}
+
+.canvas {
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+/* Background Image Style */
+.image {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+}
+
+/* Button Style */
+.statue-button {
+  color: white;
+  border-style: none;
+  background-color: black;
+  height: 4rem;
+  width: 10rem;
+  border: solid blue 4px;
+  font-size: 12pt;
+}
+
+.statue-button:hover {
+  cursor: pointer;
+  background-color: rgb(0, 60, 255);
+}
+
+.statue-button:active {
+  background-color: rgb(0, 0, 0);
+}
+
+/* Final Text Style */
+.dead-text,
+.no-statue {
+  cursor: pointer;
+  display: none;
+  background-color: red;
+  text-align: center;
+  padding: 4px;
+  width: 150px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .main-body {
+    align-items: center;
+    display: block;
+    justify-content: center;
+  }
+
+  .main {
+    width: 300px;
+    height: 400px;
+    align-items: center;
+  }
+}
