@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Gudea:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gudea', sans-serif;
+}
+
+.menu {
+    background-color: salmon;
+    display: flex;
+    float: right;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    background-color: black;
+    list-style-type: none;
+}
+
+.menu li a {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18pt;
+    text-transform: uppercase;
+    color: white;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 420px) {
+    .menu-icon {
+        display: block;
+    }
+    .menu li {
+        flex-basis: 100%;
+    }
+    nav {
+        height: 27px;
+        overflow: hidden;
+    }
+    .nav-expanded {
+        height: 160px;
+    }
+}
