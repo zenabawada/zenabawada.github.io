@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Functions Challenges</title>
+	</head>
+	<body>
+
+		<h1 id="firstH1">JavaScript Function Challenges</h1>
+		
+		<h2>Part 1</h2>
+		<p id="avgGrade">My average is: <span id="myAvg">unknown</span>.</p>
+
+		<h2>Part 2</h2>
+		<p id="avgMsg"></p>
+
+		<h2>Part 3</h2>
+		<h3>My Calculator</h3>
+	
+		&nbsp;
+		<input type="text" id="numbr1"/><br/>
+		+<input type="text" id="numbr2"/><br/>
+		<button id="addBtn">Calculate</button><br/>
+		<p id="total"></p>
+		
+	<script>
+	// Part 1: An Average Function
+	function average5(num1, num2, num3, num4, num5) {
+		let average = (num1+num2+num3+num4+num5) / 5;
+		let result = average.toFixed(1);
+		return result;
+	}
+
+	// console.log(average5(5, 10, 15, 20, 25));
+	
+	let HESL = 75;
+	let MMDD = 95;
+	let WDGD = 87;
+	let ESOL = 81;
+	let VPRD = 85;
+	
+	let avgGrade = average5(HESL, MMDD, WDGD, ESOL, VPRD);
+	document.getElementById("myAvg").innerHTML = avgGrade;
+	
+	// Part 2: Report Card
+	report = document.getElementById("avgMsg");
+	if (avgGrade >= 70) {
+		report.innerHTML = "Success!"
+		report.style.color = "green";
+
+	} else {
+		report.innerHTML = "Review required."
+		report.style.color = "red";
+	}
+
+	// Part 3: My Calculator
+	let total = document.getElementById("total");
+	let button = document.getElementById("addBtn");
+	let num1 = document.getElementById("numbr1");
+	let num2 = document.getElementById("numbr2");
+
+	function myCalculator(value1, value2) {
+		let sum = (value1 + value2);
+		return sum
+	}
+	
+	function addValues() {
+		let result = myCalculator(parseInt(num1.value), parseInt(num2.value));
+		total.innerHTML = result;
+	}
+
+	button.onclick = addValues;
+
+	</script>
+
+	</body>
+</html>
