@@ -77,10 +77,8 @@
       </section>
       		
     <script>
-		var myAPIkey = "ae60c2633a460ecbaf003e573265b70a";
-		
-        //The variable below holds the constructed URL that you will request information from.
-		var url = "http://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=" + myAPIkey + "&units=metric";
+		const myAPIkey = "ae60c2633a460ecbaf003e573265b70a";	
+		let url = "https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=" + myAPIkey + "&units=metric";
 
 
     $(document).ready(function() {
@@ -109,12 +107,7 @@
           }
         }
       );
-
-
-    })
-
-
-        
+    })        
     </script>       
     </body>    
 </html>
