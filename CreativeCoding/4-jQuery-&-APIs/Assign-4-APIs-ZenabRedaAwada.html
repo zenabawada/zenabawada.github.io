@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <title>Assignment 4</title>
+<!-- INCLUDE jQUERY -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+      .main {
+        font-family: 'Open Sans', sans-serif;
+        margin: 0 auto;
+        max-width: 400px;
+        text-align: center;
+        justify-content: center;
+        padding: 30px;
+      }
+
+      .title h1 {
+        margin: 0;
+        padding-bottom: 20px;
+      }
+
+      .weather {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .text, .conditions {
+        background-color: rgb(212, 212, 212);
+        padding: 10px 25px;
+        margin: 0px 10px;
+        border-radius: 20px;
+        border: 2px solid rgb(156, 156, 156);
+        justify-content: center;
+        align-items: center;
+      }
+
+      #icon {
+        display: flex;
+      }
+
+      .text #temperature {
+        font-size: 20pt;
+      }
+
+
+    </style>
+    <body>        
+        <!-- YOUR WEBPAGE HTML GOES HERE -->
+
+      <section class="main">
+        
+        <div class="title">
+          <h1>Retrieving API Data with jQuery</h1>
+
+        </div>
+
+        <div class="weather">
+
+          <div class="text">
+          <h2 id="location"></h2>
+          <div id="temperature"></div>
+          </div>
+          
+          <div class="conditions">
+            <div id="icon"></div>
+            <div id="conditions"></div>
+          </div>
+        </div>
+        <h3 id="comment"></h3>
+
+      </section>
+      		
+    <script>
+		var myAPIkey = "5f77cde0b8b13bf042688316e3d6e778";
+		
+        //The variable below holds the constructed URL that you will request information from.
+		var url = "http://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=" + myAPIkey + "&units=metric";
+
+
+    $(document).ready(function() {
+      $.getJSON(
+        url,
+        function(data) {
+          console.log(data);
+          let location = data.name;
+          $("#location").html(location);
+
+          let conditions = data.weather[0].main;
+          $("#conditions").html(conditions);
+
+          let icon = data.weather[0].icon;
+          $("#icon").html("<img class='icon' src=http://openweathermap.org/img/wn/" + icon + "@2x.png>");
+
+          let temperature = data.main.temp;
+          $("#temperature").html(Math.round(temperature) + "&deg;C");
+          
+          let comment = document.getElementById("comment");
+
+          if (temperature > 0) {
+            comment.innerHTML = "Weather is nice eh?!";
+          } else {
+            comment.innerHTML = "It is cold eh?!";
+          }
+        }
+      );
+
+
+    })
+
+
+        
+    </script>       
+    </body>    
+</html>
