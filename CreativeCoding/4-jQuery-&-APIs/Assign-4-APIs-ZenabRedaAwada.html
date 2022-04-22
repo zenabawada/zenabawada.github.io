@@ -93,7 +93,7 @@
           $("#conditions").html(conditions);
 
           let icon = data.weather[0].icon;
-          $("#icon").html("<img class='icon' src=http://openweathermap.org/img/wn/" + icon + "@2x.png>");
+          $("#icon").html("<img class='icon' src=https://openweathermap.org/img/wn/" + icon + "@2x.png>");
 
           let temperature = data.main.temp;
           $("#temperature").html(Math.round(temperature) + "&deg;C");
