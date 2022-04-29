@@ -67,8 +67,8 @@ function galaxy() {
 		}
 
 		context.fillStyle = "white";
-		context.font = "20pt Arial";
-		context.fillText("Click me!", 345, 100);
+		context.font = "18pt Arial";
+		context.fillText("Click to rotate faster!", 287, 100);
 
 		canvas.style.cursor = "pointer";
         window.requestAnimationFrame(draw);		
@@ -77,9 +77,6 @@ function galaxy() {
 
 //Sun
 function sunFunction() {
-	//let sin = Math.sin(frame / 84);
-	//let cos = Math.cos(frame / 84);
-	
 	context.lineWidth = 10;
 	context.fillStyle = "rgba(255, 99, 71, 0.60)";
 	context.beginPath();
@@ -126,7 +123,7 @@ function moonFunction() {
 	let sin = Math.sin(frame / 105);
 	let cos = Math.cos(frame / 105);
 	let pos = sin * earthLastPosition.size * 0.63;
-	let size = earthLastPosition.size / 8 + cos * 3;
+	let size = earthLastPosition.size / 12 + cos * 2;
 	
 	if (pos - moonLastPosition >= 0) moonDirection = 1;
 	else moonDirection = -1;

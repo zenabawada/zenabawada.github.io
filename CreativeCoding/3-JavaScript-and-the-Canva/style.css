@@ -1,5 +1,19 @@
+* {
+    background-color: rgb(3, 1, 17);
+}
+
+.canvas {
+    max-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    position: relative;
+}
+
 #canvasSection {
-    background-color: black;
+    background-color: rgb(3, 1, 17);
     width: 800px;
     height: 400px;
+    padding: 20px;
 }
