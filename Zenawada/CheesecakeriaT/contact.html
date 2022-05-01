@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cheesecakeria Traditional</title>
+        <link rel="stylesheet" type="text/css" href="./css/main.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    </head>
+
+    <body>
+        <!-- Logo -->
+        <div class="header">
+            <a href="./index.html"><img class="logo" src="images/Logo_01.png" alt="Logo"></a>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="topnav" id="topNav">
+            <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                    <li><a href="./drinks.html">Drinks</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="javascript:void(0);" id="navIcon" class="nav-icon">
+                    <i class="fa fa-bars"></i>
+                    </a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <!-- Contact section -->
+        <section class="contact">
+            <h2 class="title">Contact</h2>
+            <form class="contact-form">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name">
+
+                <label for="fname">Last Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your last name">
+
+                <label for="country">Country</label>
+
+                <select id="country" name="country">
+                    <option value="australia">Lebanon</option>
+                    <option value="canada">Brazil</option>
+                    <option value="usa">China</option>
+                    <option value="usa">Guatemala</option>
+                    <option value="usa">Uruguay</option>
+                    <option value="usa">Canada</option>
+                    <option value="usa">Chile</option>
+                </select>
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                <input class="submit" type="submit" value="Submit">
+            </form>
+
+            <aside class="title">
+                <h2>Restaurant location</h2>
+                <p>3636 Steeles Ave E #105a <br> Markham, ON L3R 2Z5</p>
+            </aside>
+        </section>
+        
+        <footer>
+            <p>&copy; 2022. Made with ❤ by Zena</p>
+        </footer>
+    </body>
+    <script src="./javascript/script.js"></script>
+</html>
