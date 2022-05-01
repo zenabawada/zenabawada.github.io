@@ -80,7 +80,7 @@ body {
 .gallery ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  grid-gap: 1rem;
+  gap: 1rem;
   list-style-type: none;
   padding: 0;
 }
@@ -142,6 +142,10 @@ body {
 }
 
 /* Menu style */
+.menu-section {
+  height: 500px;
+}
+
 .menu-container {
   display: flex;
   flex-direction: column;
