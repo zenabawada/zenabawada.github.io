@@ -81,9 +81,11 @@ header {
 
 /* content container */
 .project-grid {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 5rem 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .projects-header, .site-header {
@@ -119,7 +121,7 @@ header {
 }
 
 .project-image {
-    max-width: 487px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -313,7 +315,7 @@ header {
 /* media screen queries */
 @media only screen and (max-width: 680px) {
     body {
-        display: flex;
+        /* display: flex; */
         max-width: 1000px;
         scroll-behavior: smooth;
     }
@@ -334,17 +336,21 @@ header {
         margin: 0;
     }
 
+    #site-logo {
+        align-items: center;
+        justify-content: center;
+        padding-top: 1.8rem;
+
+    }
+
     .logo {
         max-height: 100px;
         font-size: 1.5rem;
         line-height: 1.1rem;
-    }
-
-
-    .logo {
         align-items: flex-end;
+        padding-right: 20px;
     }
-    
+
     /* responsive nav */
     .nav {
         padding-top: 1rem;
@@ -359,6 +365,7 @@ header {
         padding: 0;
         padding-bottom: 0.1rem;
         margin-left: 20px;
+        font-size: 1.5rem;
     }
 
     .nav-list {
@@ -417,7 +424,7 @@ header {
     }
 
     .projects-list {
-        margin: 2rem 1.4rem 10rem 1.4rem;    
+        margin: 2rem 1.4rem 10rem 1.4rem;
     }
 
     .project-thumbnail {
@@ -443,31 +450,54 @@ header {
         font-size: 1rem;
     }
 
-    .project-image, .project-page {
-        max-width: 320px;
+    .project-page {
+        /* max-width: 300px; */
         margin: 0 auto;
     }
 
     .content {
         padding-bottom: 7rem;
         width: 100%;
-        margin: 0 100px;
+        margin: 0 auto;
     }
 
     .flex-row, .flex-column {
         flex-direction: column;
         padding: 12px;
+    }
+
+    .project-grid {
+        margin: 0 auto;
+        padding: 5rem 0;
+    }
+
+    .project-image, .project-image-column {
+        /* max-width: 300px; */
+        margin: 0 1rem;
+    }
+
+    .project-page-header {
+        padding: 30px;
+        min-width: 250px;
+    }
+
+    .project-page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .project-page-header p {
+        font-size: 1.1rem;
     }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (min-width: 680px) and (max-width: 1100px) {
     .flex-row, .flex-column {
         flex-direction: column;
         padding: 12px;
     }
 
-    .project-image, .project-page {
-        max-width: 500px;
+    .project-image, .project-image-column {
+        max-width: 600px;
         margin: 0 auto;
     }
 
@@ -476,3 +506,4 @@ header {
         width: 100%;
     }
 }
+
