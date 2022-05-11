@@ -320,10 +320,6 @@ header {
         scroll-behavior: smooth;
     }
 
-    .project-grid {
-        padding: 0;
-    }
-
     .projects-header, .site-header {
         padding: 0;
     }
@@ -407,6 +403,7 @@ header {
 
     .project-grid {
         margin: 0 auto;
+        padding: 3rem 0;
     }
 
     .project {
@@ -464,11 +461,6 @@ header {
     .flex-row, .flex-column {
         flex-direction: column;
         padding: 12px;
-    }
-
-    .project-grid {
-        margin: 0 auto;
-        padding: 5rem 0;
     }
 
     .project-image, .project-image-column {
