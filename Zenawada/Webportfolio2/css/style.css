@@ -416,7 +416,7 @@ header {
     }
 
     .projects-title, .site-title {
-        padding-top: 20px;
+        padding-top: 0.75rem;
         font-size: 1.5rem;
     }
 
@@ -469,7 +469,7 @@ header {
     }
 
     .project-page-header {
-        padding: 30px;
+        padding: 0 30px;
         min-width: 250px;
     }
 
@@ -479,6 +479,8 @@ header {
 
     .project-page-header p {
         font-size: 1.1rem;
+        margin: 0 0 2.5rem 0;
+}
     }
 }
 
