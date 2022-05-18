@@ -89,6 +89,9 @@ function TryAgain(response) {
 //     console.log(success);
 // }
 
+
+
+
 let index = 0;
 submitBtn.onclick = function() {
     let data = {
@@ -100,13 +103,13 @@ submitBtn.onclick = function() {
         presence_penalty: 0.0,
         stop: ["\n"],
     }
-
     
     fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
+        
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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",
+            Authorization: `Bearer ${process.env.API_KEY}`,
         },
         body: JSON.stringify(data),
     })
@@ -134,10 +137,11 @@ presetBtn.onclick = promptPreset;
 
 
 
+
 function promptPreset() {
     promptText.value = "Find the most spoken language \n\nBrazil: Portuguese \nCanada: English \nGreece:";
 }
-
+console.log(process.env);
 
 
 // Response Box Fade-In
