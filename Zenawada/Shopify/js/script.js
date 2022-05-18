@@ -11,7 +11,18 @@ let responsesContainer = document.getElementById("responses-container");
 let node = document.getElementById("response-box");
 let presetBtn = document.getElementById("promptPreset");
 
-UpdateResponses();
+function Initialize() {
+    require('dotenv').config();
+    console.log("Test");
+    console.log(process.env);
+
+    clearResponsesBtn.onclick = ClearReponses;
+    presetBtn.onclick = promptPreset;
+
+    UpdateResponses();
+}
+
+Initialize();
 
 function output(prompt, response) {
     if (response != null) {
@@ -90,9 +101,6 @@ function TryAgain(response) {
 //     console.log(success);
 // }
 
-
-
-
 let index = 0;
 submitBtn.onclick = function() {
     let data = {
@@ -131,20 +139,9 @@ submitBtn.onclick = function() {
     index++;*/
 }
 
-clearResponsesBtn.onclick = ClearReponses;
-presetBtn.onclick = promptPreset;
-
-
-
-
-
-
 function promptPreset() {
     promptText.value = "Find the most spoken language \n\nBrazil: Portuguese \nCanada: English \nGreece:";
 }
-console.log(process.env);
-console.log("Test");
-
 
 // Response Box Fade-In
 
