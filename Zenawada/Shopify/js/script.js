@@ -30,6 +30,7 @@ function outputTest(prompt, response) {
 }
 
 function UpdateResponses() {
+    console.log("update");
     while (responsesContainer.firstChild != null && responsesContainer.childElementCount > 1) {
         responsesContainer.removeChild(responsesContainer.firstChild);
     }
