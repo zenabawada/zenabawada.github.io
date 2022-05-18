@@ -142,6 +142,7 @@ function promptPreset() {
     promptText.value = "Find the most spoken language \n\nBrazil: Portuguese \nCanada: English \nGreece:";
 }
 console.log(process.env);
+console.log("Test");
 
 
 // Response Box Fade-In
