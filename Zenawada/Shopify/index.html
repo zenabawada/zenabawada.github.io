@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Finder</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e00cc96603.js" crossorigin="anonymous"></script>  
+</head>
+
+<body>
+    <article class="project-container">
+        <div class="title">
+            <h1>LANGUAGE FINDER</h1>
+        </div>
+        
+        <div class="content">
+            <div class="prompt-container">
+                <div class="prompt-wrap">            
+                    <form id="form" class="form">
+                        <label for="prompt">Enter prompt</label>
+
+<textarea type="text" id="prompt" name="prompt" rows="12" cols="65" 
+placeholder="Find the most spoken language in the country
+
+Brazil: Portuguese
+Canada: English
+Greece: "></textarea>
+                    <br>
+                    </form>
+                    <div class="prompt-buttons">
+                        <button id="promptPreset">Preset</button>
+                        <button id="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-responses">
+                <div id="clearResponsesContainer" class="clear-responses-container"><button id="clearResponsesButton" class="clear-responses-button">Clear history</button></div>
+                <div id="responses-container" class="responses-container"><div id="response-box" class="response-box"><div><button id="responseRemoveButton" class="responseRemoveButton">&times;</button></div><h2>Prompt:</h2><pre id="promptSubmitted" class="promptSubmitted">a</pre><h2>Response:</h2><pre id="responseSubmitted" class="responseSubmitted">b</pre><button id="tryButton" class="tryButton">Try again</button></div></div>
+            </div>
+        </div>
+
+    </article>
+
+    <footer id="footer" class="footer">
+        <div class="footer-wrap">
+            <ul>
+                <li><a class="social" href="https://www.linkedin.com/in/zenaawada/" target="_blank"><i class="fa-brands fa-linkedin fa-xl link-hover"></i></a></li>
+                <li><a class="social" href="https://github.com/zenabawada" target="_blank"><i class="fa-brands fa-github fa-xl link-hover"></i></a></li>
+                <li><a class="footer-link link-hover" href="https://zenabawada.github.io/Webportfolio/web.html" target="_blank">Portfolio</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
