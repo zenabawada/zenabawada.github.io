@@ -48,7 +48,6 @@ function UpdateResponses() {
     }
 
     responsesContainer.style.display = "flex";
-    // responsesContainer.style.transition = "all 0.5s ease-in-out";
 }
 
 function DrawResponse(response) {
@@ -57,14 +56,25 @@ function DrawResponse(response) {
     const id = "response-box-" + responsesContainer.childElementCount;
     clone.id = id;
     
+    
     //responsesContainer.appendChild(clone);
     responsesContainer.insertBefore(clone, responsesContainer.firstChild);
     document.getElementById(id).getElementsByClassName("promptSubmitted")[0].innerHTML = response.promptValue;
     document.getElementById(id).getElementsByClassName("responseSubmitted")[0].innerHTML = response.responseValue;
-    document.getElementById(id).getElementsByClassName("responseRemoveButton")[0].onclick = function() { RemoveResponse(response) };
+    document.getElementById(id).getElementsByClassName("responseRemoveButton")[0].onclick = removeResponseBox;
     document.getElementById(id).getElementsByClassName("tryButton")[0].onclick = function() { TryAgain(response) };
-    
+
+    function removeResponseBox() {
+        RemoveResponse(response);
+        // responsesContainer.style.animation = "none";
+        $( document ).ready(function() {
+            $(".responses-container div:first-child").css("animation" , "none");
+        });
+        
+    }
 }
+
+
 
 function ClearReponses() {
     responsesArray = [];
@@ -112,7 +122,7 @@ submitBtn.onclick = function() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${apiKey}`,
+            "Authorization": "Bearer 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"
         },
         body: JSON.stringify(data),
     })
