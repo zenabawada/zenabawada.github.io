@@ -11,7 +11,6 @@ let responsesContainer = document.getElementById("responses-container");
 let node = document.getElementById("response-box");
 let presetBtn = document.getElementById("promptPreset");
 
-import apiConfig from 'apiKey';
 
 UpdateResponses();
 
