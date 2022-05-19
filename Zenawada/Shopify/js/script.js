@@ -103,7 +103,7 @@ function TryAgain(response) {
 
 
 
-
+const apiKey = "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";
 let index = 0;
 
 submitBtn.onclick = function() {
@@ -122,7 +122,7 @@ submitBtn.onclick = function() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": `Bearer ${apiKey}`
         },
         body: JSON.stringify(data),
     })
