@@ -11,18 +11,9 @@ let responsesContainer = document.getElementById("responses-container");
 let node = document.getElementById("response-box");
 let presetBtn = document.getElementById("promptPreset");
 
-function Initialize() {
-    require('dotenv').config();
-    console.log("Test");
-    console.log(process.env);
+import apiConfig from 'apiKey';
 
-    clearResponsesBtn.onclick = ClearReponses;
-    presetBtn.onclick = promptPreset;
-
-    UpdateResponses();
-}
-
-Initialize();
+UpdateResponses();
 
 function output(prompt, response) {
     if (response != null) {
@@ -101,7 +92,11 @@ function TryAgain(response) {
 //     console.log(success);
 // }
 
+
+
+
 let index = 0;
+
 submitBtn.onclick = function() {
     let data = {
         prompt: promptText.value,
@@ -118,7 +113,7 @@ submitBtn.onclick = function() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.API_KEY}`,
+            "Authorization": `Bearer ${apiKey}`,
         },
         body: JSON.stringify(data),
     })
@@ -127,6 +122,7 @@ submitBtn.onclick = function() {
         output(promptText.value, success);
         promptText.value = "";
     })
+
         // console.log('Request succeeded with JSON response', data)
     // .catch(function (error) {
     //     console.log('Request failed', error);
@@ -139,15 +135,16 @@ submitBtn.onclick = function() {
     index++;*/
 }
 
+clearResponsesBtn.onclick = ClearReponses;
+presetBtn.onclick = promptPreset;
+
+// console.log(process.env.API_KEY);
+
+
+
+
+
+
 function promptPreset() {
     promptText.value = "Find the most spoken language \n\nBrazil: Portuguese \nCanada: English \nGreece:";
 }
-
-// Response Box Fade-In
-
-// $(document).ready(function() {
-//     $('#submit').click(function() {
-//         // alert("test");
-//         $(".response-box").slideUp();
-//     });
-// })
