@@ -103,7 +103,7 @@ function TryAgain(response) {
 
 
 
-const apiKey = "";
+const APIKEY = "";
 let index = 0;
 
 submitBtn.onclick = function() {
@@ -122,7 +122,7 @@ submitBtn.onclick = function() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${apiKey}`
+            "Authorization": "Bearer ${APIKEY}"
         },
         body: JSON.stringify(data),
     })
