@@ -103,7 +103,7 @@ function TryAgain(response) {
 
 
 
-const apiKey = "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";
+const apiKey = "";
 let index = 0;
 
 submitBtn.onclick = function() {
