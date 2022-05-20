@@ -103,7 +103,6 @@ function TryAgain(response) {
 
 
 
-const APIKEY = "";
 let index = 0;
 
 submitBtn.onclick = function() {
