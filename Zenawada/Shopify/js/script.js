@@ -101,11 +101,12 @@ submitBtn.onclick = function() {
     }
 
     
-    fetch("https://afternoon-lowlands-42708.herokuapp.com/open_ai?prompt=" + promptText.value, {
-        method: "GET",
+    fetch("https://afternoon-lowlands-42708.herokuapp.com/open_ai", {
+        method: "POST",
         headers: {
             "Content-Type": "application/json"
-        }
+        },
+        body: JSON.stringify(data)
     })
     .then(data => data.json())
     .then(success => {
