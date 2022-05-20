@@ -8,18 +8,7 @@ body {
     position: relative;
 }
 
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: rgb(78, 78, 99); 
-}
-::-webkit-scrollbar-thumb {
-    background: rgb(48, 48, 80);
-}
-::-webkit-scrollbar-thumb:hover {
-    background: rgb(30, 30, 49);
-}
+
 
 .project-container {
     display: flex;
@@ -239,6 +228,20 @@ body {
 .footer a:hover {
     color: rgb(26, 151, 182);
     
+}
+
+/* scrollbar style */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgb(78, 78, 99); 
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(48, 48, 80);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(30, 30, 49);
 }
 
 

@@ -1,4 +1,4 @@
-import API_KEY from "../index.js";
+// import API_KEY from "../index.js";
 
 let responsesArray = localStorage.getItem('responsesCache') == null ? [] : JSON.parse(localStorage.getItem('responsesCache'));
 		
@@ -16,6 +16,10 @@ let presetBtn = document.getElementById("promptPreset");
 
 UpdateResponses();
 
+function promptPreset() {
+    promptText.value = "Find the most spoken language \n\nBrazil: Portuguese \nCanada: English \nGreece:";
+}
+
 function output(prompt, response) {
     if (response != null) {
         console.log(response);
@@ -23,13 +27,6 @@ function output(prompt, response) {
         localStorage.setItem('responsesCache', JSON.stringify(responsesArray));
         UpdateResponses();
     }
-}
-
-function outputTest(prompt, response) {
-    // => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
-    responsesArray.push({ promptValue: prompt, responseValue: response });
-    localStorage.setItem('responsesCache', JSON.stringify(responsesArray));
-    UpdateResponses();
 }
 
 function UpdateResponses() {
@@ -58,8 +55,6 @@ function DrawResponse(response) {
     const id = "response-box-" + responsesContainer.childElementCount;
     clone.id = id;
     
-    
-    //responsesContainer.appendChild(clone);
     responsesContainer.insertBefore(clone, responsesContainer.firstChild);
     document.getElementById(id).getElementsByClassName("promptSubmitted")[0].innerHTML = response.promptValue;
     document.getElementById(id).getElementsByClassName("responseSubmitted")[0].innerHTML = response.responseValue;
@@ -68,15 +63,11 @@ function DrawResponse(response) {
 
     function removeResponseBox() {
         RemoveResponse(response);
-        // responsesContainer.style.animation = "none";
         $( document ).ready(function() {
             $(".responses-container div:first-child").css("animation" , "none");
-        });
-        
+        })
     }
 }
-
-
 
 function ClearReponses() {
     responsesArray = [];
@@ -96,18 +87,9 @@ function TryAgain(response) {
     promptText.value = response.promptValue
 }
 
-// function output(success) {
-//     responsesContainer.style.display = "block";
-//     promptSave.innerHTML = promptText.value;
-//     responseSave.innerHTML = success["choices"][0]["text"];
-//     console.log(success);
-// }
-
-
-
-let index = 0;
-
 submitBtn.onclick = function() {
+    if (!promptText.value) return;
+
     let data = {
         prompt: promptText.value,
         temperature: 0,
@@ -117,7 +99,25 @@ submitBtn.onclick = function() {
         presence_penalty: 0.0,
         stop: ["\n"],
     }
+
     
+    fetch("https://afternoon-lowlands-42708.herokuapp.com/open_ai?prompt=" + promptText.value, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(data => data.json())
+    .then(success => {
+        output(promptText.value, success);
+        promptText.value = "";
+    })
+    .catch(function (error) {
+        console.log('Request failed', error);
+    });
+
+    
+    /*
     fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
         
         method: "POST",
@@ -132,26 +132,10 @@ submitBtn.onclick = function() {
         output(promptText.value, success);
         promptText.value = "";
     })
-
-        // console.log('Request succeeded with JSON response', data)
-    // .catch(function (error) {
-    //     console.log('Request failed', error);
-    // });
-    
-    /*
-    let s = index % 3 == 0 ? "One" : index % 3 == 1 ? "Two" : "Three";
-    outputTest(promptText.value, "Test response " + s);
-    promptText.value = "";
-    index++;*/
+    .catch(function (error) {
+        console.log('Request failed', error);
+    });    */
 }
 
 clearResponsesBtn.onclick = ClearReponses;
 presetBtn.onclick = promptPreset;
-
-
-
-
-
-function promptPreset() {
-    promptText.value = "Find the most spoken language \n\nBrazil: Portuguese \nCanada: English \nGreece:";
-}
