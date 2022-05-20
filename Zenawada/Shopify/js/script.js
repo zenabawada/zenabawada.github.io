@@ -1,3 +1,5 @@
+import API_KEY from "../index.js";
+
 let responsesArray = localStorage.getItem('responsesCache') == null ? [] : JSON.parse(localStorage.getItem('responsesCache'));
 		
 let form = document.getElementById("form");
@@ -121,7 +123,7 @@ submitBtn.onclick = function() {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer ${APIKEY}"
+            "Authorization": `Bearer ${API_KEY}`
         },
         body: JSON.stringify(data),
     })
@@ -145,9 +147,6 @@ submitBtn.onclick = function() {
 
 clearResponsesBtn.onclick = ClearReponses;
 presetBtn.onclick = promptPreset;
-
-// console.log(process.env.API_KEY);
-
 
 
 
