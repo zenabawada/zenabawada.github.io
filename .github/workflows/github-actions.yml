@@ -3,7 +3,10 @@ name: GitHub Actions Demo
 on: [push]
 
 env:
-  API_KEY: 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
+  SUPER_SECRET: ${{ secrets.API_KEY }}
+  
+  
+  
   
 jobs:
   Explore-GitHub-Actions:
@@ -17,6 +20,6 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
+        run: cat $HOME/Zenawada/Shopify/js/script.js
+        
       - run: echo "🍏 This job's status is ${{ job.status }}."
