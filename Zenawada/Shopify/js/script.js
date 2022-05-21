@@ -17,13 +17,13 @@ let presetBtn = document.getElementById("promptPreset");
 UpdateResponses();
 
 function promptPreset() {
-    promptText.value = "Find the most spoken language \n\nBrazil: Portuguese \nCanada: English \nGreece:";
+    promptText.value = "Find the most spoken language \n\nCanada: English \nGreece:";
 }
 
 function output(prompt, response) {
     if (response != null) {
         console.log(response);
-        responsesArray.push({ promptValue: prompt, responseValue: response["choices"][0]["text"] });
+        responsesArray.push({ promptValue: prompt, responseValue: response["choices"][0]["text"].split(' ')[1]});
         localStorage.setItem('responsesCache', JSON.stringify(responsesArray));
         UpdateResponses();
     }
@@ -90,7 +90,7 @@ function TryAgain(response) {
 submitBtn.onclick = function() {
     if (!promptText.value) return;
 
-    let data = {
+    /*let data = {
         prompt: promptText.value,
         temperature: 0,
         max_tokens: 64,
@@ -98,15 +98,14 @@ submitBtn.onclick = function() {
         frequency_penalty: 0.0,
         presence_penalty: 0.0,
         stop: ["\n"],
-    }
+    }*/
 
     
-    fetch("https://afternoon-lowlands-42708.herokuapp.com/open_ai", {
-        method: "POST",
+    fetch("https://afternoon-lowlands-42708.herokuapp.com/open_ai?prompt=" + promptText.value, {
+        method: "GET",
         headers: {
             "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
+        }
     })
     .then(data => data.json())
     .then(success => {
