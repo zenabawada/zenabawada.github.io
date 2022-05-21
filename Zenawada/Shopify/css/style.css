@@ -80,10 +80,11 @@ body {
 
 .prompt-wrap button:hover {
     cursor: pointer;
+    opacity: 60%;
 }
 
 .prompt-wrap button:active {
-    opacity: 60%;
+    opacity: 100%;
 }
 
 .container-responses {
@@ -106,16 +107,16 @@ body {
 
 .clear-responses-button:hover, .responseRemoveButton:hover, .tryButton:hover {
     cursor: pointer;
-    text-decoration: underline;
-
+    opacity: 60%;
 }
 
-.tryButton:active {
-    text-decoration: none;
+.tryButton:hover {
+    text-decoration: underline;
+    opacity: 100%;
 }
 
 .clear-responses-button:active, .responseRemoveButton:active {
-    opacity: 60%;
+    opacity: 100%;
 }
 
 .responseRemoveButton {
