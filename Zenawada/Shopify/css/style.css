@@ -235,11 +235,12 @@ body {
     justify-content: center;
     align-items: center;
     opacity: 40%;
-    position: absolute;
+    position: fixed;
     z-index: 1;
+    height: 100%;
     width: 100%;
     margin: auto;
-    top: 18rem;
+    top: 20rem;
     transform: translate(0, -50%);
 }
 
