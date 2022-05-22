@@ -1,5 +1,3 @@
-// import API_KEY from "../index.js";
-
 let responsesArray = localStorage.getItem('responsesCache') == null ? [] : JSON.parse(localStorage.getItem('responsesCache'));
 		
 let form = document.getElementById("form");
@@ -14,7 +12,7 @@ let node = document.getElementById("response-box");
 let presetBtn = document.getElementById("promptPreset");
 let loadingModal = document.getElementById("loadingModal");
 
-
+console.log("Github Repository: https://github.com/zenabawada/zenabawada.github.io/tree/main/Zenawada/Shopify");
 UpdateResponses();
 
 function promptPreset() {
@@ -23,7 +21,6 @@ function promptPreset() {
 
 function output(prompt, response) {
     if (response != null) {
-        console.log(response);
         responsesArray.push({ promptValue: prompt, responseValue: response["choices"][0]["text"].split(' ')[1]});
         localStorage.setItem('responsesCache', JSON.stringify(responsesArray));
         UpdateResponses();
@@ -31,7 +28,6 @@ function output(prompt, response) {
 }
 
 function UpdateResponses() {
-    console.log("update");
     while (responsesContainer.firstChild != null && responsesContainer.childElementCount > 1) {
         responsesContainer.removeChild(responsesContainer.firstChild);
     }
@@ -88,19 +84,17 @@ function TryAgain(response) {
     promptText.value = response.promptValue
 }
 
+function SetWaitingResponseState(imWaiting) {
+    if (imWaiting) {
+        loadingModal.style.display = "flex";
+    }
+    else {
+        loadingModal.style.display = "none";
+    }
+}
+
 submitBtn.onclick = function() {
     if (!promptText.value) return;
-
-
-    /*let data = {
-        prompt: promptText.value,
-        temperature: 0,
-        max_tokens: 64,
-        top_p: 1.0,
-        frequency_penalty: 0.0,
-        presence_penalty: 0.0,
-        stop: ["\n"],
-    }*/
 
     SetWaitingResponseState(true);
     fetch("https://afternoon-lowlands-42708.herokuapp.com/open_ai?prompt=" + promptText.value, {
@@ -119,35 +113,6 @@ submitBtn.onclick = function() {
         console.log('Request failed', error);
         SetWaitingResponseState(false);
     });
-
-    
-    /*
-    fetch("https://api.openai.com/v1/engines/text-curie-001/completions", {
-        
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`
-        },
-        body: JSON.stringify(data),
-    })
-    .then(data => data.json())
-    .then(success => {
-        output(promptText.value, success);
-        promptText.value = "";
-    })
-    .catch(function (error) {
-        console.log('Request failed', error);
-    });    */
-}
-
-function SetWaitingResponseState(imWaiting) {
-    if (imWaiting) {
-        loadingModal.style.display = "flex";
-    }
-    else {
-        loadingModal.style.display = "none";
-    }
 }
 
 clearResponsesBtn.onclick = ClearReponses;

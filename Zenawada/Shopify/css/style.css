@@ -8,12 +8,9 @@ body {
     position: relative;
 }
 
-
-
 .project-container {
     display: flex;
     flex-flow: column wrap;
-    /* border: 2px solid red; */
     gap: 20px;
     justify-content: center;
     align-items: center;
@@ -140,7 +137,6 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-
 .responses-container {
     align-items: center;
     margin-top: 2.8rem;
@@ -166,10 +162,8 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    
+    border-radius: 0.5rem;    
 }
-
 
 .response-box h2 {
     padding: 20px 20px 8px;
@@ -245,13 +239,14 @@ body {
     transform: translate(0, -50%);
 }
 
-/* loading animation */
+/* Loading template by https://loading.io/css/ */
 .lds-ring {
     display: inline-block;
     position: relative;
     width: 80px;
     height: 80px;
   }
+
   .lds-ring div {
     box-sizing: border-box;
     display: block;
@@ -264,6 +259,7 @@ body {
     animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: #fff transparent transparent transparent;
   }
+
   .lds-ring div:nth-child(1) {
     animation-delay: -0.45s;
   }
@@ -273,6 +269,7 @@ body {
   .lds-ring div:nth-child(3) {
     animation-delay: -0.15s;
   }
+  
   @keyframes lds-ring {
     0% {
       transform: rotate(0deg);
@@ -280,24 +277,7 @@ body {
     100% {
       transform: rotate(360deg);
     }
-  }
-  
-
-@keyframes loadingtext {
-    0% {
-        content: "Loading";
-    }
-    25% {
-        content: "Loading.";
-    }
-    50% {
-        content: "Loading..";
-    }
-    75% {
-        content: "Loading...";
-    }
-    
-}
+  }  
 
 /* response container scrollbar style */
 ::-webkit-scrollbar {
