@@ -51,6 +51,7 @@ body {
     border: 1px solid rgb(167, 167, 189);
     padding: 1rem;
     border-radius: .5rem;
+    max-height: 30rem;
 }
 
 .form textarea::placeholder {
@@ -353,7 +354,6 @@ body {
 
     .form textarea {
         max-width: 18em;
-        max-height: 12em;
     }
 
     .prompt-wrap button {
