@@ -12,6 +12,7 @@ let clearResponsesBtn = document.getElementById("clearResponsesButton");
 let responsesContainer = document.getElementById("responses-container");
 let node = document.getElementById("response-box");
 let presetBtn = document.getElementById("promptPreset");
+let loadingModal = document.getElementById("loadingModal");
 
 
 UpdateResponses();
@@ -90,6 +91,7 @@ function TryAgain(response) {
 submitBtn.onclick = function() {
     if (!promptText.value) return;
 
+
     /*let data = {
         prompt: promptText.value,
         temperature: 0,
@@ -100,7 +102,7 @@ submitBtn.onclick = function() {
         stop: ["\n"],
     }*/
 
-    
+    SetWaitingResponseState(true);
     fetch("https://afternoon-lowlands-42708.herokuapp.com/open_ai?prompt=" + promptText.value, {
         method: "GET",
         headers: {
@@ -111,9 +113,11 @@ submitBtn.onclick = function() {
     .then(success => {
         output(promptText.value, success);
         promptText.value = "";
+        SetWaitingResponseState(false);
     })
     .catch(function (error) {
         console.log('Request failed', error);
+        SetWaitingResponseState(false);
     });
 
     
@@ -135,6 +139,15 @@ submitBtn.onclick = function() {
     .catch(function (error) {
         console.log('Request failed', error);
     });    */
+}
+
+function SetWaitingResponseState(imWaiting) {
+    if (imWaiting) {
+        loadingModal.style.display = "flex";
+    }
+    else {
+        loadingModal.style.display = "none";
+    }
 }
 
 clearResponsesBtn.onclick = ClearReponses;
