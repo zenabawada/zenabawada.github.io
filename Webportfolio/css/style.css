@@ -59,6 +59,10 @@ header {
     margin: 0 2rem;
 }
 
+.nav-container {
+    width: 350px;
+}
+
 .nav-list {
     display: flex;
     overflow: hidden;
@@ -67,7 +71,11 @@ header {
 }
 
 .nav-list li a {
-    padding-left: 40px;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+        font-family: 'Lato', sans-serif;
 }
 
 .nav-item {
@@ -75,8 +83,8 @@ header {
     font-weight: 400;
 }
 
-.nav-list a {
-    font-family: 'Lato', sans-serif;
+.nav-list li:first-child {
+    display: none;
 }
 
 /* content container */
@@ -322,6 +330,11 @@ header {
         scroll-behavior: smooth;
     }
 
+    .main-wrap {
+        transition: margin-left .5s;
+        padding: 16px;
+    }
+
     .projects-header, .site-header {
         padding: 0;
     }
@@ -332,12 +345,29 @@ header {
         align-items: stretch;
         display: flex;
         margin: 0;
+            height: 100%;
+    }
+
+    .nav-container {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(30, 33, 49);
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .nav-container.responsive {
+        width: 250px;
     }
 
     #site-logo {
         align-items: center;
         justify-content: center;
-        padding-top: 1.8rem;
+        padding-top: 1rem;
 
     }
 
@@ -350,15 +380,23 @@ header {
     }
 
     /* responsive nav */
+    .close-button {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        font-size: 36px;
+    }
+
     .nav {
         padding-top: 1rem;
     }
 
     .nav-list a {
         display: none;
+        white-space: nowrap;
     }
 
-    .nav-list .mobile-nav-icon {
+    .mobile-nav-icon {
         display: block;
         padding: 0;
         padding-bottom: 0.1rem;
@@ -371,28 +409,14 @@ header {
         flex-direction: column-reverse;
         flex-wrap: wrap;
         align-items: flex-start;
-        justify-content: stretch;
     }
 
-    .nav-list.responsive li:not(:first-of-type){
-        position: relative;
-        justify-content: flex-start;
-        background-color: rgb(29, 33, 48);
-        border-bottom: 1px solid var(--main-color);
-    }
-
-    .nav-list.responsive li:not(:first-of-type):active {
-        background-color: rgb(49, 69, 107);
-    }
-
-    .nav-list.mobile-nav-icon.responsive{
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-
-    .nav-list li a {
-        padding: 10px 20px 10px 10px;
+    .nav-list li:not(:first-of-type) {
+        padding: 16px 30px 10px 5px;
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+        font-size: 16pt;
     }
 
     .nav-list.responsive a {
@@ -401,6 +425,14 @@ header {
         float: none;
         display: block;
         text-align: left;
+    }
+
+    .nav-list li:first-child {
+        display: block;
+    }
+
+    .nav-list li:nth-child(2) {
+        padding-top: 40px;
     }
 
     .project-grid {
@@ -450,7 +482,6 @@ header {
     }
 
     .project-page {
-        /* max-width: 300px; */
         margin: 0 auto;
     }
 
