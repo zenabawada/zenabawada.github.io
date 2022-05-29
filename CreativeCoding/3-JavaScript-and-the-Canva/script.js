@@ -25,14 +25,30 @@ function galaxy() {
 		})
 	}
 
-	canvas.onmousedown = function() {
+
+
+	function active() {
 		canvasClicked = true;
 		scale = 3;
 	}
 
-	canvas.onmouseup = function() {
+	function inactive() {
 		canvasClicked = false;
 	}
+
+	canvas.onmousedown = active;
+	canvas.onmouseup = inactive;
+	canvas.addEventListener('touchend', inactive);
+	canvas.addEventListener('touchstart', active);
+
+	// canvas.onmousedown = function() {
+	// 	canvasClicked = true;
+	// 	scale = 3;
+	// }
+
+	// canvas.onmouseup = function() {
+	// 	canvasClicked = false;
+	// }
 		
     image.onload = draw;
     image.src = "earth.png";
@@ -71,9 +87,11 @@ function galaxy() {
 		context.fillText("Click to rotate faster!", 287, 100);
 
 		canvas.style.cursor = "pointer";
-        window.requestAnimationFrame(draw);		
+        window.requestAnimationFrame(draw);
+
 	}
 }
+
 
 //Sun
 function sunFunction() {
