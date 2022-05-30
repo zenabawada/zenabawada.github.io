@@ -169,7 +169,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem 1.5rem;
-    justify-content: center;
+    justify-content: left;
     margin: 2rem 2rem 10rem 2rem;    
 }
 
