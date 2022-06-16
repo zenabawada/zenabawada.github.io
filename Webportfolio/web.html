@@ -16,10 +16,10 @@
     <div id="mainWrap" class="main-wrap">
 
         <!-- site header -->
-        <header id="header">
+        <header id="header" class="main-site-header">
             <div id="siteNavContainer" class="site-nav-container">
                 <!-- site title -->
-                <div id="site-logo">
+                <div id="site-logo" class="site-logo">
                     <a href="web.html" class="logo-container"><h1 class="logo">Zena</h1><h1 class="logo">Awada</h1></a>
                 </div>
                 <!-- site nav -->                
@@ -27,9 +27,9 @@
                     <div id="navContainer" class="nav-container">
                         <ul id="siteNav" class="nav-list">
                             <li class="nav-item"><a id="closeBtn" class="close-button" href="javascript:void(0)">&times;</a></li>
-                            <li class="nav-item"><a class="link-hover" href="web.html">Web</a></li>
-                            <li class="nav-item"><a class="link-hover" href="design.html">Concept Design</a></li>
-                            <li class="nav-item"><a class="link-hover" href="about.html">About</a></li>
+                            <li id="webLink" class="nav-item site-link"><a class="link-hover" href="#web-page">Web</a></li>
+                            <li id="designLink" class="nav-item site-link"><a class="link-hover" href="#design-page">Concept Design</a></li>
+                            <li id="aboutLink" class="nav-item site-link"><a class="link-hover" href="#about">About</a></li>
                         </ul>                        
                     </div>
                     <li class="nav-item"><a class="mobile-nav-icon link-hover" href="javascript:void(0)" id="mobileNavIcon"><i class="fa-solid fa-bars"></i></a></li>
@@ -41,8 +41,24 @@
         <!-- main content -->
         <div id="content">
             <article class="project-grid">
+                
+                <div id="about" class="about-container">
+                    <img class="about-picture" src="images/about-pic.jpg" alt="Profile picture"/>
+                    <div class="about-text">
+                        <p>Hello! My name is Zena Awada. I am a current student in the Multimedia Design and Development program at Humber College. </p>
+                        <p>I am interested in Front-End Development, having solid knowledge of HTML, CSS, JavaScript, and jQuery. My focus is towards writing scalable and well implemented code across the web and mobile.</p>
+                        <p>I have some projects in mind envolving web coding, therefore this page is going to be constantly updated. I have also made some digital arts and concepts during the past years.</p>
+                    </div>
+                    <hr class="about-hr">
+                    <ul class="about-list">
+                        <li><a href="mailto:zeenah3@hotmail.com">Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/zenaawada/" target="_blank">Linkedin</a></li>
+                        <li><a href="https://github.com/zenabawada" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+
                 <!-- header -->
-                <header class="projects-header">
+                <header id="web-page" class="projects-header">
                     <h1 class="projects-title">Web Projects</h1>
                 </header>
                 
@@ -89,6 +105,34 @@
                         </li>
                     </ul>
                 </div>
+
+
+                <!-- header -->
+                <header id="design-page" class="design-header">
+                    <h1 class="projects-title">Concept Design</h1>
+                </header>
+                
+                <div class="projects-container design">
+                    <ul class="projects-list-design">
+                        <li class="project">
+                            <figure class="thumbnail">
+                                <a href="techschool.html"><img class="project-thumbnail" src="images/design_01.jpg" alt="Canvas animation"/></a>
+                            </figure>
+                            <h2 class="project-title"><a href="techschool.html">Technical School/Coworking Space</a></h2>
+                            <p class="caption">Architectural project in a Sao Paulo quarter</p>
+                        </li>
+
+                        <li class="project">
+                            <figure class="thumbnail">
+                                <a href="camumusushi.html"><img class="project-thumbnail" src="images/design_02.jpg" alt="Canvas animation"/></a>
+                            </figure>
+                            <h2 class="project-title"><a href="camumusushi.html">Camumu Sushi</a></h2>
+                            <p class="caption">UI project made for Camumu Sushi using Photoshop, Illustrator and AdobeXD</p>
+                        </li>
+
+                    </ul>
+                </div>
+
             </article>
         </div>
         <!-- end main content -->
