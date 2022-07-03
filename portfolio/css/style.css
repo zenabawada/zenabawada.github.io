@@ -689,7 +689,7 @@ body {
 
     .project-grid {
         margin: 0 auto;
-        padding: 3rem 0 2rem;
+        padding: 3rem 0 5rem;
     }
 
     .project-grid .design {
@@ -705,7 +705,7 @@ body {
     }
 
     .conceptdesign-list .project:last-child{
-        margin-bottom: 4rem;
+        margin-bottom: 0;
     }
 
     .project:nth-child(odd) {
