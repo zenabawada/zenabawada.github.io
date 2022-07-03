@@ -830,7 +830,7 @@ body {
     }
 
     .projects-header h1 {
-        margin: 1rem 0 2rem 22.4px;
+        margin: 0 0 2.25rem 22.4px;
         text-align: left;
     }
     
@@ -853,7 +853,7 @@ body {
     }
 
     .design-header {
-        padding: 1rem 0 1.75rem 0;
+        padding: 00 1.75rem 0;
     }
 
     .footer-wrap {
