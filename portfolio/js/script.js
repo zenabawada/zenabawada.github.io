@@ -5,7 +5,7 @@ let closeBtn = document.getElementById("closeBtn");
 let navContainer = document.getElementById("navContainer");
 let mainWrap = document.getElementById("mainWrap");
 let content = document.getElementById("content");
-
+let aboutPic = document.getElementById("aboutPic");
 let siteLinks = document.querySelectorAll(".site-link");
 
 // responsive nav
@@ -22,9 +22,6 @@ for (let i = 0; i < siteLinks.length; i++) {
 function closeNav() {
     navContainer.className = "nav-container";
 }
-
-content.onclick = closeNav;
-closeBtn.onclick = closeNav;
 
 // nav scroll
 window.addEventListener('scroll', function() {
