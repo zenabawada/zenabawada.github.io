@@ -23,6 +23,8 @@ function closeNav() {
     navContainer.className = "nav-container";
 }
 
+content.onclick = closeNav;
+
 // nav scroll
 window.addEventListener('scroll', function() {
     let header = document.getElementById('siteNavContainer');
