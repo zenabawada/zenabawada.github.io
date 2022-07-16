@@ -35,3 +35,26 @@ window.addEventListener('scroll', function() {
 
 // scroll effect
 AOS.init();
+
+// Scroll to top button
+let scrollToTopBtn = document.querySelector(".scroll-top-button");
+const rootEle = document.documentElement;
+
+function scroll() {
+    let scrollTotal = rootEle.scrollHeight - rootEle.clientHeight;
+    if (rootEle.scrollTop / scrollTotal > 0.3) {
+        scrollToTopBtn.classList.add("showBtn");
+    } else {
+        scrollToTopBtn.classList.remove("showBtn");
+    }
+}
+
+function scrollToTop() {
+    rootEle.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+scrollToTopBtn.addEventListener("click", scrollToTop);
+document.addEventListener("scroll", scroll)

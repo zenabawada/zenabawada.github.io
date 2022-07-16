@@ -711,6 +711,30 @@ body {
     margin-right: .5rem;
 }
 
+.scroll-top-button {
+    font-size: 4rem;
+    border-style: none;
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    cursor: pointer;
+    transform: translateY(100px);
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+    opacity: 0;
+    background-color: transparent;
+}
+
+.scroll-top-button i {
+    color: var(--main-color);
+
+}
+
+.showBtn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* media screen queries */
 @media only screen and (max-width: 680px) {
     body {
@@ -738,11 +762,10 @@ body {
         justify-content: space-between;
         flex-direction: row-reverse;
         width: 100%;
-        position: relative;
+        position: absolute;
         top: 0;
         z-index: 1;
         transition: all .5s ease;
-
     }
 
     /* .site-nav-container {
@@ -765,7 +788,7 @@ body {
     .nav-container {
         height: 1000px;
         width: 0;
-        position: fixed;
+        position: absolute;
         z-index: 100;
         top: 0;
         left: 0;
@@ -786,10 +809,10 @@ body {
 
     .nav-scrolling-active {
         background-color: rgba(240, 241, 233, 0.85);
-        box-shadow: 0 10px 1.5rem -10px rgba(0, 0, 0, .1);
-        backdrop-filter: blur(3px);
+        box-shadow: none;
+        backdrop-filter: none;
         filter: none !important;
-        position: fixed;
+        position: absolute;
         width: 100%;
     }
 
@@ -1087,6 +1110,11 @@ body {
 
     .footer hr {
         margin: 0 22.4px;
+    }
+
+    .scroll-top-button {
+        bottom: 20px;
+        right: 20px;
     }
 }
 
