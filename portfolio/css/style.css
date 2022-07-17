@@ -29,6 +29,18 @@ body {
     height: 100vh;
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cfd2d4;
+}
+
 .main-wrap {
     margin: 0 auto;
     align-items: center;
