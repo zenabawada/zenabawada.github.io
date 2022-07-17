@@ -686,7 +686,7 @@ body {
     width: 10%;
     height: 8px;
     border: none;
-    background-color: var(--main-color);
+    background-color: var(--secondary-color);
     margin: 3rem 0 1.5rem;
 }
 
