@@ -42,7 +42,7 @@ const rootEle = document.documentElement;
 
 function scroll() {
     let scrollTotal = rootEle.scrollHeight - rootEle.clientHeight;
-    if (rootEle.scrollTop / scrollTotal > 0.3) {
+    if (rootEle.scrollTop / scrollTotal > 0.2) {
         scrollToTopBtn.classList.add("showBtn");
     } else {
         scrollToTopBtn.classList.remove("showBtn");

@@ -7,7 +7,8 @@
 :root {
     --main-color: #f8614e;
     --secondary-color: #99debe;
-    --background-color: #f0f1e9;
+    --background-color: #f7f4f0;
+    --background-color-transparent: rgba(247, 244, 240, 0.85);
     --text-color: #3e5766;
 }
 
@@ -18,7 +19,7 @@
     font-family: 'Poppins', sans-serif;
     padding: 0;
     scroll-behavior: smooth;
-    
+
 }
 
 body {
@@ -177,7 +178,7 @@ body {
 }
 
 .nav-scrolling-active {
-    background-color: rgba(240, 241, 233, 0.85);
+    background-color: var(--background-color-transparent);
     box-shadow: 0 10px 1.5rem -10px rgba(0, 0, 0, .1);
     height: 4.5rem;
     backdrop-filter: blur(5px);
@@ -617,7 +618,7 @@ body {
     animation-name: spin;
     animation-duration: 3500ms;
     animation-iteration-count: infinite;
-    animation-timing-function: linear; 
+    animation-timing-function: linear;
 }
 
 @keyframes spin {
@@ -639,7 +640,7 @@ body {
 }
 
 .about-picture:hover {
-	background: url("../images/aboutpic_02.png");
+	background: url("../images/aboutpic-sepia.png");
     width: 30rem;
     height: 30rem;
     background-size: cover;
@@ -656,7 +657,7 @@ body {
         background-position: center;
     }
     to {
-        background: url("../images/aboutpic_02.png");
+        background: url("../images/aboutpic-sepia.png");
         width: 30rem;
         height: 30rem;
         background-size: cover;
@@ -666,7 +667,7 @@ body {
 
 @keyframes circle-out {
     from {
-        background: url("../images/aboutpic_02.png");
+        background: url("../images/aboutpic-sepia.png");
         width: 30rem;
         height: 30rem;
         background-size: cover;
@@ -762,7 +763,7 @@ body {
         justify-content: space-between;
         flex-direction: row-reverse;
         width: 100%;
-        position: absolute;
+        position: fixed;
         top: 0;
         z-index: 1;
         transition: all .5s ease;
@@ -979,7 +980,8 @@ body {
     }
 
     .background-shape {
-        top: 40px;
+        width: 105%;
+        top: 45px;
         left: -10px;
     }
 
@@ -987,11 +989,15 @@ body {
         width: 20rem;
         height: 20rem;
         margin-top: 4.5rem;
+        animation: none;
+        transition: all 0.3s ease-in-out;
+
     }
 
     .about-picture:hover {
         width: 20rem;
         height: 20rem;
+        animation: none;
     }
 
     @keyframes circle {
@@ -1003,7 +1009,7 @@ body {
             background-position: center;
         }
         to {
-            background: url("..images/aboutpic_02.png");
+            background: url("..images/aboutpic-sepia.png");
             width: 20rem;
             height: 20rem;
             background-size: cover;
@@ -1068,6 +1074,8 @@ body {
     .about-container {
         padding-top: 0;
         flex-direction: column;
+        overflow-x: hidden;
+
     }
 
     .project-info, .caption {
