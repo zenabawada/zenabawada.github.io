@@ -6,7 +6,8 @@
 
 :root {
     --main-color: #f8614e;
-    --main-color-thumbnail: #dd5644;
+    /* --main-color-thumbnail: #a85449; */
+    --main-color-thumbnail: #3e5766;
     --secondary-color: #99debe;
     --background-color: #f7f4f0;
     --background-color-transparent: rgba(247, 244, 240, 0.85);
@@ -486,7 +487,7 @@ body {
     border-radius: 0.5rem;
     background-color: var(--main-color-thumbnail);
     background-blend-mode: screen;
-    transition: all 0.7s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 .design01 {
