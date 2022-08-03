@@ -6,6 +6,7 @@
 
 :root {
     --main-color: #f8614e;
+    --main-color-faded: #ffdad6;
     /* --main-color-thumbnail: #a85449; */
     --main-color-thumbnail: #3e5766;
     --secondary-color: #99debe;
@@ -165,7 +166,7 @@ body {
     counter-reset: nav;
 }
 
-.nav-list li a {
+.nav-list li:not(:last-child) a {
     padding: 20px;
     text-decoration: none;
     display: inline-block;
@@ -173,18 +174,26 @@ body {
     font-family: 'DM Mono', monospace;
 }
 
-/* .nav-list li a::before {
-    counter-increment: nav;
-    content: "0" counter(nav) ".";
-    margin-right: 5px;
-    text-align: right;
-    color: var(--main-color);
-    font-size: 0.85rem;
-} */
-
 .nav-item {
     font-size: 1rem;
     font-weight: 400;
+}
+
+.resume-button {
+    padding: 8px 15px;
+    border: solid var(--main-color) 1px;
+    border-radius: 0.4rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all;
+}
+
+.resume-button:hover {
+    background-color: var(--main-color-faded);
+}
+
+.resume-button a {
+    color: var(--main-color);
 }
 
 .nav-list li:first-child {
@@ -894,7 +903,6 @@ body {
     }
 
     .nav-list a {
-        display: none;
         white-space: nowrap;
     }
 
@@ -916,7 +924,7 @@ body {
     }
 
     .nav-list li:not(:first-of-type) {
-        padding: 16px 30px 10px 5px;
+        padding: 0px 30px 20px 30px;
         text-decoration: none;
         display: block;
         transition: 0.3s;
@@ -931,8 +939,12 @@ body {
         text-align: left;
     }
 
-    .nav-list li a {
+    /* .nav-list li a {
         padding: 8px 0 0 32px;
+    } */
+
+    .resume-button {
+        border: none;
     }
 
     .nav-list li:not(:first-child) a {
@@ -943,8 +955,20 @@ body {
         display: block;
     }
 
+    .nav-list li:first-child a {
+        z-index: 1;
+    }
+
     .nav-list li:nth-child(2) {
-        padding-top: 40px;
+        padding-top: 60px;
+    }
+
+    .nav-list li:not(:last-child) a {
+        padding: 0px;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.3s;
+        font-family: 'DM Mono', monospace;
     }
 
     .project-grid {

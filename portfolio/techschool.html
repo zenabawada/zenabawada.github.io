@@ -9,6 +9,7 @@
         <link rel="icon" type="image/ico" href=""/>
         <script src="https://kit.fontawesome.com/e00cc96603.js" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
         <title>Zena Awada | Front-End Developer</title>
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -22,22 +23,27 @@
             <div id="siteNavContainer" class="site-nav-container">
                 <!-- site title -->
                 <div id="site-logo" class="site-logo">
-                    <a href="index.html" class="logo-container"><h1 class="logo">Zena</h1><h1 class="logo">Awada</h1></a>
+                    <a href="index.html" class="logo-container">
+                        <div data-aos="zoom-in" data-aos-duration="400" data-aos-delay="300" class="logo-img"><title>Logo</title></div>
+                    </a>
+                    <!-- <h1 class="logo">Zena</h1><h1 class="logo">Awada</h1> -->
                 </div>
                 <!-- site nav -->                
                 <nav class="nav">
                     <a class="mobile-nav-icon link-hover" href="javascript:void(0)" id="mobileNavIcon"><i class="fa-solid fa-bars"></i></a>
                     <div id="navContainer" class="nav-container">
-                        <ul id="siteNav" class="nav-list">
+                        <ol id="siteNav" class="nav-list">
                             <li class="nav-item"><a id="closeBtn" class="close-button" href="javascript:void(0)">&times;</a></li>
-                            <li id="aboutLink" class="nav-item site-link"><a class="link-hover" href="index.html#content">About</a></li>
-                            <li id="webLink" class="nav-item site-link"><a class="link-hover" href="index.html#web-page">Web</a></li>
-                            <li id="designLink" class="nav-item site-link"><a class="link-hover" href="index.html#design-page">Concept Design</a></li>
-                        </ul>
+                            <li data-aos="fade-down" data-aos-duration="800" data-aos-delay="0" id="aboutLink" class="nav-item"><a class="link-hover" href="#content">About</a></li>
+                            <li data-aos="fade-down" data-aos-duration="800" data-aos-delay="100" id="webLink" class="nav-item"><a class="link-hover" href="#web-page">Web</a></li>
+                            <li data-aos="fade-down" data-aos-duration="800" data-aos-delay="200" id="designLink" class="nav-item"><a class="link-hover" href="#design-page">Concept Design</a></li>
+                            <li data-aos="fade-down" data-aos-duration="800" data-aos-delay="300" id="designLink" class="nav-item resume-button"><a class="link-hover" href="images/resume.pdf" target="_blank">Resume</a></li>
+                        </ol>                        
                     </div>
                 </nav>
             </div>
         </header>
+
         <!-- end site header -->
 
         <!-- main content -->
@@ -62,17 +68,18 @@
         
         <!-- footer -->
         <footer id="footer" class="footer">
-            <hr class="divider-line">
+            <!-- <hr class="divider-line"> -->
             <div class="footer-wrap">
-                <h3>2022 | Developed By Zena Awada</h3>
+                <h3>2022 | Developed and Designed by Zena Awada</h3>
                 <ul>
                     <li>
                         <a class="social" href="https://www.linkedin.com/in/zenaawada/" target="_blank"><i class="fa-brands fa-linkedin fa-xl link-hover"></i></a>
                     </li>
                     <li>
                         <a class="social" href="https://github.com/zenabawada" target="_blank"><i class="fa-brands fa-github fa-xl link-hover"></i></a>
-                    </li>                        <li>
-                        <a class="footer-link link-hover" href="index.html#content">About</a>
+                    </li>
+                    <li>
+                        <a class="footer-link link-hover" href="index.html">About</a>
                     </li>
                 </ul>
             </div>
