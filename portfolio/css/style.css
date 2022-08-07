@@ -6,7 +6,7 @@
 
 :root {
     --main-color: #f8614e;
-    --main-color-faded: #ffdad6;
+    --main-color-faded: #f8e9e8;
     /* --main-color-thumbnail: #a85449; */
     --main-color-thumbnail: #3e5766;
     --secondary-color: #99debe;
@@ -179,16 +179,17 @@ body {
     font-weight: 400;
 }
 
-.resume-button {
-    padding: 8px 15px;
+.resume-button a {
+    padding: 6px 12px;
     border: solid var(--main-color) 1px;
-    border-radius: 0.4rem;
+    border-radius: 0.3rem;
     background-color: transparent;
     cursor: pointer;
     transition: all;
+    font-family: 'DM Mono', monospace;
 }
 
-.resume-button:hover {
+.resume-button a:hover {
     background-color: var(--main-color-faded);
 }
 
@@ -676,6 +677,15 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+
+.background-lineart {
+    position: absolute;
+    z-index: -1;
+    width: 110%;
+    top: -60px;
+    left: -180px;
+
 }
 
 .about-picture {
