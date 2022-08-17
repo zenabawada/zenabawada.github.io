@@ -23,6 +23,7 @@ function closeNav() {
     navContainer.className = "nav-container";
 }
 
+closeBtn.onclick = closeNav;
 content.onclick = closeNav;
 
 // nav scroll

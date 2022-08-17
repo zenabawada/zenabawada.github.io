@@ -244,7 +244,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 0 1.9rem;
+    /* margin: 0 1.9rem; */
 }
 
 .skills-container li {
@@ -254,7 +254,7 @@ body {
     align-items: center;
     text-align: center;
     font-size: 1.2rem;
-    padding: 3rem 2.5rem;
+    padding: 3rem 1.8rem;
     transition: all 0.3s ease-in-out;
 }
 
@@ -906,6 +906,7 @@ body {
         top: 0;
         right: 20px;
         font-size: 36px;
+        z-index: 2;
     }
 
     .nav {
@@ -1027,6 +1028,7 @@ body {
 
     .skills-container ul {
         gap: 1.5rem;
+        margin: 0 1rem;
     }
 
     .skills-container li {
@@ -1047,6 +1049,20 @@ body {
         z-index: -1;
     }
 
+    .skills-container i {
+        font-size: 4rem;
+        padding: 0.5rem 0;
+    }
+    
+    .skills-container img {
+        width: 4rem;
+        padding: 0.5rem 0;
+    }
+
+    .skills-container li.adobe-list {
+        padding-top: 1.25rem;
+    }
+
     .projects-list {
         margin: 2rem 1rem 1rem;
     }
@@ -1060,6 +1076,10 @@ body {
         width: 105%;
         top: 45px;
         left: -10px;
+    }
+
+    .background-lineart {
+        display: none;
     }
 
     .about-picture {
