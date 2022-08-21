@@ -306,7 +306,7 @@ body {
 }
 
 .projects-header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0 0 3.25rem;
     position: relative;
 }
@@ -342,12 +342,13 @@ body {
 .project-page-header h1 {
     font-size: 2.5rem;
     text-align: left;
+    margin-bottom: 1rem;
 }
 
 .project-page-header p {
     margin: 0 0 4rem 0;
     font-size: 1.4rem;
-    max-width: 500px;
+    max-width: 700px;
     text-align: center;
 
 }
@@ -435,7 +436,9 @@ body {
 .stack-info ul {
     display: flex;
     padding-top: 1rem;
-
+    align-items: center;
+    align-content: center;
+    gap: 0.25rem;
 }
 
 .stack-info ul li {
@@ -447,19 +450,29 @@ body {
     padding: .75rem .75rem .75rem 0;
     transition: all 0.3s ease-in-out;
     font-family: Inter, sans-serif;
+}
 
+.stack-info ul li img {
+    padding-bottom: 0.25rem;
+}
+
+.conceptdesign-list li:nth-child(2) .stack-info ul {
+    gap: 0;
 }
 
 .stack-info i {
     font-size: 1.8rem;
     transition: all 0.3s ease-in-out;
-
+    padding-bottom: 0.25rem;
 }
 
 .stack-info ul li:hover {
     transform: translateY(-3px);
 }
 
+.concept-design img {
+    height: 1.75rem;
+}
 
 .stack-icon {
     font-size: 3rem;
@@ -771,7 +784,7 @@ body {
 }
 
 .scroll-top-button {
-    font-size: 4rem;
+    font-size: 3.5rem;
     border-style: none;
     position: fixed;
     bottom: 30px;
@@ -786,7 +799,6 @@ body {
 
 .scroll-top-button i {
     color: var(--main-color);
-
 }
 
 .showBtn {
