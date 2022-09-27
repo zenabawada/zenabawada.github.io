@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #22223b;
+    color: #F2E9E4;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+}
+
+#chatInput {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 400px;
+}
+
+#textBox {
+    background-color: #4A4E69;
+    padding: 0.75rem;
+    color: #F2E9E4;
+    height: 8rem;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+    border: none;
+}
+
+#textBox::placeholder {
+    color: #7c84b8;
+}
+
+.button {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+
+.button button {
+    background-color: #9A8C98;
+    color: #22223b;
+    border: none;
+    width: 8rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 0.25rem;
+}
+
+.button button:hover {
+    opacity: 0.8;
+}
+
+#submit {
+    background-color: #7871b1;
+}
+
+#chat {
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+#chatHistory ul li {
+    width: 400px;
+    max-height: fit-content;
+    padding: 1.25rem 2rem;
+    background-color: #4A4E69;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#chatDate {
+    background: none;
+    color: #C9ADA7;
+    font-size: 0.75rem;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 1rem;
+    }
+
+    #chatInput {
+        width: auto;
+        /* margin: auto; */
+    }
+
+
+    #chatHistory ul li {
+        width: auto;
+
+    }
+}
