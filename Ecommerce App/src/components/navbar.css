@@ -1,0 +1,41 @@
+.navbar {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(19, 19, 19);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    display: flex;
+}
+
+.shop-logo {
+    margin-left: 50px;
+}
+
+.shop-logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    font-family: 'Unbounded', cursive;
+}
+
+.cart-items {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer
+}
