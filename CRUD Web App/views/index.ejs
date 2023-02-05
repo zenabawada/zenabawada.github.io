@@ -1,0 +1,66 @@
+<%- include("partials/head.ejs", {page: "Home"}) %>
+<%- include("partials/header.ejs") %>
+<script defer src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI" crossorigin="anonymous"></script>
+
+
+<div class="posts-wrap d-flex flex-column justify-content-center align-items-center">
+  <% if (!posts || posts.length <= 0) { %>
+  <div class="alert alert-secondary" role="alert">
+    There are no posts to show!
+  </div>
+  <% } else { %>
+    <h1>Latest Posts</h1>
+    <div class="posts-outer-container justify-content-center align-items-center">      
+    <ol reversed>
+  <% posts.forEach(post => { %>
+    
+    <li>
+      
+        <div class="post-container-outer">
+          
+            <% if (locals.user) { %>
+              <% if (locals.user.id === post.userId) { %>
+                <div class="edit-container home">
+                  <a class="edit-post-button" href="/editPost/<%= post._id %> "><img src="images/edit.png" width="24px"/></a>
+                  <a class="confirm-delete" href="/delete/<%= post._id %>"><img src="images/delete.png" width="24px"/></a>
+                </div>
+              <% } %>
+            <% } %>
+            
+            <div class="post-container">
+            
+            <div class="single-item item-user-info">
+              <div class="user-info d-flex align-items-center">
+                <a href="/user/<%= post.userId %>">
+                <% if (post.userImage === null || post.userImage === "") { %>
+                  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"/>
+                <% } else { %>
+                  <img src="<%= post.userImage %>"/>
+                <% } %>
+                <div class="user-inner-container d-flex flex-column">
+                </a>
+                  <span class="date"><%= post.date %> </span>
+                  <a href="/user/<%= post.userId %>"><span><%= post.username %></span></a>
+                  
+                </div>
+                
+              </div>
+            </div>
+            <a href="/post/<%= post._id %>">
+            <div class="content">
+              <div class="single-item my-3"><h3>What is your favourite fruit?</h3><span><%= post.favFruit %></span></div>
+              <div class="single-item my-3"><h3>What do you typically eat for breakfast?</h3><span><%= post.breakfast %></span></div>
+              <div class="single-item my-3"><h3>Do you have any hobbies? If yes, please specify.</h3><span><%= post.hobbies %></span></div>
+            </div>          
+        </div>
+      </div>
+      </a>
+    </li>
+
+  <% }) %>
+</ol>
+</div>
+  <% } %>
+</div>
+
+<%- include("partials/foot.ejs") %> <%- include("partials/footer.ejs") %>

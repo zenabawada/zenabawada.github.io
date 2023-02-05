@@ -1,0 +1,36 @@
+<%- include("../partials/head.ejs", {page: "New Post"}) %>
+<%- include("../partials/header.ejs") %>
+
+<div class="new-post container px-4 text-center">
+    <div class="row">
+        <% if (errorMessage) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= errorMessage %> 
+                </div>
+        <% } %>
+        <h2>Create new post</h2>
+        <form action="/new" method="post" onsubmit="swalPostConfirmation()">
+            <div class="new-post-wrap container flex-column justify-content-center align-items-center">
+                <div class="mb-3">
+                    <label for="favFruit" class="form-label">What is your favourite fruit?</label>
+                    <input name="favFruit" type="text" class="form-control" id="favFruit" autocomplete="off" required>
+                    <span class="error">Error</span>
+                </div>
+                <div class="mb-3">
+                    <label for="breakfast" class="form-label">What do you typically eat for breakfast?</label>
+                    <input name="breakfast" type="text" class="form-control" id="breakfast" autocomplete="off" required>
+                    <span class="error">Error</span>
+                </div>
+                <div class="mb-3">
+                    <label for="hobbies" class="form-label">Do you have any hobbies? If yes, please specify.</label>
+                    <input name="hobbies" type="text" class="form-control" id="hobbies" autocomplete="off">
+                    <span class="error">Error</span>
+                </div>
+                <button id="submitNewPost" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include("../partials/foot.ejs") %> 
+<%- include("../partials/footer.ejs") %> 

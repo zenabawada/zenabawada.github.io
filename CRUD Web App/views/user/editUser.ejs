@@ -1,0 +1,40 @@
+<%- include("../partials/head.ejs", {page: "Edit Profile"}) %>
+<%- include("../partials/header.ejs") %>
+
+<div class="container px-4 text-center edit-user-wrap">
+    <div class="row">
+        <div class="user-edit">
+            <h2>Edit Details</h2>
+            <form action="/editUser/<%= user._id %>" method="post" class="edit-user-details">
+                <div class="inner-container">
+                    <div class="mb-3">
+                        <label for="fname" class="form-label">First Name</label>
+                        <input name="fname" type="text" class="form-control" id="fname" value="<%= user.fname %>" required>
+                        <span class="error">Your name should not include a banned word.</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lname" class="form-label">Last Name</label>
+                        <input name="lname" type="text" class="form-control" id="lname" value="<%= user.lname %>" required>
+                        <span class="error">Your last name should not include a banned word.</span>
+                    </div>                    
+                </div>
+                <div class="inner-container">
+                    <div class="mb-3">
+                        <label for="profileImage" class="form-label">Profile Image (URL)</label>
+                        <input name="profileImage" type="text" class="form-control" id="profileImage" value="<%=user.profileImage%>" accept="image/*">
+                    </div>
+                </div>
+                
+                <div class="inner-container edit-profile-links">
+                    <div><a class="edit-email" href="/editEmail/<%= locals.user._id.toString() %>">Edit Email</a></div>
+                    <div><a class="edit-password" href="/editPassword/<%= locals.user._id.toString() %>">Edit Password</a></div>
+                    <div><a class="confirm-delete" href="/deleteUser/<%= user._id %>">Delete account</a></div>
+                </div>
+                <button id="submitBtn" onclick="return editUserConfirmation()" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</form>
+
+<%- include("../partials/foot.ejs") %> 
+<%- include("../partials/footer.ejs") %> 

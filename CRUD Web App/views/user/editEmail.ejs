@@ -1,0 +1,24 @@
+<%- include("../partials/head.ejs", {page: "Edit Email"}) %>
+<%- include("../partials/header.ejs") %>
+
+<div class="container px-4 text-center edit-user-wrap">
+    <div class="row">
+        <div class="user-edit">
+            <h2>Edit Email</h2>
+            <form action="/editEmail/<%= user._id %>" method="post">                
+                <div class="inner-container">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input name="email" type="email" class="form-control email-input" id="email" value="<%= user.email %>" required>
+                        <span class="error">Your email should not include a banned word.</span>
+                        <span class="error email-error">Email already used</span>
+                    </div>
+                </div>
+                <button id="submitBtn" onclick="return editUserEmailConfirmation()" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</form>
+
+<%- include("../partials/foot.ejs") %> 
+<%- include("../partials/footer.ejs") %> 

@@ -1,0 +1,20 @@
+<%- include("../partials/head.ejs", {page: "Error"}) %>
+<%- include("../partials/header.ejs") %>
+<style>
+    .container {
+        width: fit-content;
+    }
+</style>
+
+<div class="container mx-auto mt-5 d-flex flex-column text-center">
+    <div class="alert alert-danger" role="alert">
+        <div>Oh noez! There is an 404 error in this page!</div>
+    </div>
+
+    <div>
+        <a href="/">Go to Homepage</a>
+    </div>
+</div>
+
+<%- include("../partials/foot.ejs") %> 
+<%- include("../partials/footer.ejs") %> 

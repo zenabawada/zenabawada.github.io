@@ -1,0 +1,59 @@
+<%- include("../partials/head.ejs", {page: "Register"}) %>
+<%- include("../partials/header.ejs") %>
+
+<div class="container px-4 text-center">
+    <div class="row gx-5">
+        <div class="user-register col-4">
+            <% if (errorMessage) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= errorMessage %> 
+                  </div>
+            <% } %>
+            <h2>Register</h2>
+            <form action="/register" method="post" onsubmit="swalConfirmation()" >
+                <div class="inner-container">
+                    <div class="mb-3">
+                        <label for="fname" class="form-label">First Name *</label>
+                        <input name="fname" type="text" class="required-input form-control" id="fname" autocomplete="off" required>
+                        <span class="error">Your name should not include a banned word.</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lname" class="form-label">Last Name *</label>
+                        <input name="lname" type="text" class="required-input form-control" id="lname" autocomplete="off" required>
+                        <span class="error">Your last name should not include a banned word.</span>
+                    </div>                    
+                </div>
+                <div class="inner-container">
+                    <div class="mb-3">
+                        <label for="profileImage" class="form-label">Profile Image (URL)</label>
+                        <input name="profileImage" type="text" class="form-control" id="profileImage" accept="image/*">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email *</label>
+                        <input name="email" type="email" class="required-input form-control email-input" id="email" autocomplete="off" required>
+                        <span class="error">Your email should not include a banned word.</span>
+                        <span class="error email-error">Email already used</span>
+
+                    </div>
+                </div>
+                <div class="inner-container">
+                    <div class="mb-3 password-container">
+                        <label for="password" class="form-label">Password *</label>
+                        <input name="password" type="password" class="required-input form-control" id="password" required>
+                        <i class="fa-solid fa-eye toggle-password"></i>
+                    </div>
+                    <div class="mb-3 password-container">
+                        <label for="passwordConfirm" class="form-label">Confirm Password *</label>
+                        <input name="passwordConfirm" type="password" class="required-input form-control" id="passwordConfirm" required>
+                        <i class="fa-solid fa-eye toggle-passwordconfirm"></i>
+                        <span class="error">Your password is not matching.</span>                
+                    </div>
+                </div>
+                <button id="submitBtn" onclick="return confirmation()" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/foot.ejs") %> 
+<%- include("../partials/footer.ejs") %> 

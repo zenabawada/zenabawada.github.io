@@ -1,0 +1,65 @@
+<%- include("../partials/head.ejs", {page: "Profile"}) %>
+<%- include("../partials/header.ejs") %>
+
+<div class="posts-wrap d-flex justify-content-center align-items-start">
+    <div class="user-profile-info d-flex flex-wrap flex-column">
+        
+        <div class="edit-profile">
+            <% if (profileUser.profileImage === "" || profileUser.profileImage === null || profileUser.profileImage === "_") { %>
+            <img class="user-profile-image" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" width="200px" height="200px"/>
+            <% } else { %>
+            <img class="user-profile-image" src="<%= profileUser.profileImage %>" width="200px" height="200px"/>
+            <% } %>
+            <% if (locals.user.id === userId) { %>
+              <div><a href="/editUser/<%= locals.profileUser._id.toString() %> "><img src="/images/edit.png" width="24px"/></a></div>
+            <% } %> 
+            
+        </div>
+        <div class="full-name d-flex flex-wrap"><h2><%= profileUser.fname %></h2><h2><%= profileUser.lname %></h2></div>            
+        <!-- <h3><%= profileUser.email %></h3> -->
+    </div>
+    
+    <% if (!posts || posts.length <= 0) { %>
+    <div class="alert alert-secondary" role="alert">
+      There are no posts to show!
+    </div>
+    <% } else { %>
+      <div class="posts-outer-container justify-content-center align-items-center">
+      <ol reversed>
+    <% posts.forEach(post => { %>
+      <li>
+      <div class="post-container profile">
+          <% if (locals.user) { %>
+            <% if (locals.user.id === post.userId) { %>
+              <div class="edit-container-profile">
+                <div><a href="/editPost/<%= post._id %>"><img src="/images/edit.png" width="24px"/></a></div>
+                <div><a class="confirm-delete" href="/delete/<%= post._id %>"><img src="/images/delete.png" width="24px"/></a></div>
+              </div>
+            <% } %>        
+          <% } %>
+          
+          <div class="single-item item-user-info-profile">
+            <div class="user-info d-flex align-items-center">
+              
+              <div class="user-inner-container d-flex flex-column">
+                <span class="date"><%= post.date %> </span>
+                <span><%= post.username %></span>
+              </div>
+              
+            </div>
+          </div>
+          <div class="content">
+            <div class="single-item my-3"><h3>What is your favourite fruit?</h3><span><%= post.favFruit %></span></div>
+            <div class="single-item my-3"><h3>What do you typically eat for breakfast?</h3><span><%= post.breakfast %></span></div>
+            <div class="single-item my-3"><h3>Do you have any hobbies? If yes, please specify.</h3><span><%= post.hobbies %></span></div>
+          </div>
+      </div>
+    </li>
+    <% }) %>
+  </ol>
+  </div>
+    <% } %>
+  </div>
+
+<%- include("../partials/foot.ejs") %> 
+<%- include("../partials/footer.ejs") %> 

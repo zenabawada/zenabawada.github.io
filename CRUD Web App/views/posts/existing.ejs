@@ -1,0 +1,42 @@
+<%- include("../partials/head.ejs", {page: "Post"}) %>
+<%- include("../partials/header.ejs") %>
+
+<div class="existing-post-wrap m-5 d-flex flex-column align-items-center">
+  <div class="post-container single-post mx-auto">
+      <% if (locals.user) { %>
+        <% if (user.id === post.userId) { %>
+          <div class="edit-container">
+            <div><a href="/editPost/<%= post._id %> "><img src="/images/edit.png" width="24px"/></a></div>
+            <div><a class="confirm-delete" href="/delete/<%= post._id %>"><img src="/images/delete.png" width="24px"/></a></div>
+          </div>
+        <% } %>  
+      <% } %>
+
+        <div class="single-item item-user-info">
+          <div class="user-info d-flex align-items-center">
+            <a href="/user/<%= post.userId %>">
+              <% if (post.userImage == null || post.userImage === "") { %>
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"/>
+              <% } else { %>
+                <img src="<%= post.userImage %>"/>
+              <% } %>
+            </a>
+            <div class="user-inner-container d-flex flex-column">
+              <span class="date"><%= post.date %> </span>
+              <a href="/user/<%= post.userId %>"><span><%= post.username %></span></a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="content">
+          <div class="single-item my-3"><h3>What is your favourite fruit?</h3><span><%= post.favFruit %></span></div>
+          <div class="single-item my-3"><h3>What do you typically eat for breakfast?</h3><span><%= post.breakfast %></span></div>
+          <div class="single-item my-3"><h3>Do you have any hobbies? If yes, please specify.</h3><span><%= post.hobbies %></span></div>
+        </div>
+  </div>
+  <a href="/">Go to Home</a>
+</div>
+
+
+<%- include("../partials/foot.ejs") %> 
+<%- include("../partials/footer.ejs") %> 
