@@ -25,37 +25,16 @@ export const ProductPage = (props) => {
   changeColor = (e) => {
     let sizes = document.querySelectorAll(".single-size-wrapper");
 
-    // if (!e.classList.contains("size-clicked")) {
-    //   e.classList.add("size-clicked");
-    // } else if (e.classList.contains("size-clicked")) {
-    //   e.classList.remove("size-clicked");
-    // }
-
-    // sizes.forEach((size) => {
-    //   size.classList.remove("size-clicked");
-    // });
-
     for (let i = 0; i < sizes.length; i++) {
-      // sizes[i].classList.remove("size-clicked");
-      // console.log(sizes);
       sizes.forEach((size) => {
         if (!e.classList.contains("size-clicked")) {
           size.classList.remove("size-clicked");
         }
       });
-      // e.classList.add("size-clicked");
       if (!sizes[i].classList.contains("size-clicked")) {
         e.classList.add("size-clicked");
       }
     }
-
-    // sizes.forEach((size) => {
-    //   if (size.classList.contains("size-clicked")) {
-    //     size.classList.remove("size-clicked");
-    //   } else {
-    //     e.classList.add("size-clicked");
-    //   }
-    // });
   };
 
   return (
@@ -64,12 +43,13 @@ export const ProductPage = (props) => {
         <img src={thisProduct.productImage} />
       </div>
       <div className="p-details">
-        <p>{thisProduct.gender}</p>
-        <h1>{thisProduct.productName}</h1>
-        <span>{thisProduct.price}</span>
-        <span>
-          or {equalPayments} equal payments of {`$${paymentsAmount.toFixed(2)}`}
-          with Klarna. <a href="#">Learn More</a>
+        <p className="p-gender">{thisProduct.gender}</p>
+        <h1 className="p-title">{thisProduct.productName}</h1>
+        <span className="p-price">${thisProduct.price}</span>
+        <span className="p-klarna">
+          or {equalPayments} equal payments of{" "}
+          {`$${paymentsAmount.toFixed(2)} `}
+          with <b>Klarna</b>. <a href="#">Learn More</a>
         </span>
 
         <div className="product-size-options">
@@ -92,7 +72,7 @@ export const ProductPage = (props) => {
           </ul>
         </div>
         <button
-          className="addToCartBtn"
+          className="addToCartBtn addToCartBtn_ProductMobile"
           onClick={() => {
             addToCart(productId);
           }}

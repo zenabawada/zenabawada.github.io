@@ -48,6 +48,12 @@ h1 {
     border: solid 1px var(--container-color);
 }
 
+.shop .shop {
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
 .product img {
     width: 100%;
     border-bottom: solid 1px var(--container-color);
@@ -79,22 +85,37 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
-    .products-container {
-        margin: 0 10px;
-    }
 
     .products {
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 0;
     }
 
     .product {
         width: 100%;
         margin: 0;
         height: auto;
+        border: none;
+        border-left: solid 1px var(--container-color);
+        border-top: solid 1px var(--container-color);
+    }
+
+    .products .product:nth-last-child(-n+2) {
+        border-bottom: solid 1px var(--container-color);       
     }
 
     .product img {
         width: 100%;
+        border-bottom: 0;
+    }
+
+    .shop-hero video {
+        height: auto;
+    }
+
+    .addToCartBtn_ShopMobile {
+        min-width: 120px !important;
+        height: 40px;
+        border-radius: 10px !important;
     }
 }

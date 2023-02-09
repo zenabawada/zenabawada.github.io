@@ -1,18 +1,30 @@
 .cart {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 3rem;
     align-items: center;
+    min-height: 100vh;
+}
+
+.cart h1 {
+    font-size: 1.5rem;
 }
 
 .cart-item {
-    width: 700px;
-    height: 250px;
+    width: fit-content;
+    min-width: 25vw;
+    height: auto;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     border: solid 1px lightgrey;
-    border-radius: 10px;
     margin: 30px;
+    padding-right: 6rem;
+}
+
+.cart-item a {
+    height: auto;
 }
 
 .cart-item img {
@@ -20,14 +32,30 @@
 }
 
 .cart-item .description {
-    width: 100%;
+    /* width: 100%; */
     font-size: 1.75rem;
+    overflow-x: visible;
+}
+
+.count-handler {
+    display: flex;
+    height: 2rem;
 }
 
 .count-handler input {
     width: 40px;
     text-align: center;
     font-weight: 600;
+    border: none;
+}
+
+.count-handler button {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    width: 2rem;
+    border: none;
+    border-radius: 8px
 }
 
 .checkout button {
@@ -36,7 +64,50 @@
     background-color: rgb(19, 19, 19);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     margin: 10px;
     cursor: pointer;
+}
+
+.checkout p {
+    font-size: 1.25rem;
+}
+
+.description {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.description p {
+    color: black;
+    margin: 0;
+}
+
+.cart-item a {
+    width: auto;
+}
+
+.description p {
+    text-align: start;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+    .cart-item {
+        padding: 0;
+        flex-flow: column wrap;
+        margin: 30px 10px;
+        width: 80vw;
+    }
+
+    .cart-item .description {
+        width: fit-content;
+    }
+
+    .description {
+        align-items: center;
+        margin-bottom: 2rem;
+    }
 }

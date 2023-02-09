@@ -17,8 +17,9 @@
 .links a {
     text-decoration: none;
     color: white;
-    font-size: 25px;
+    font-size: 1.25rem;
     display: flex;
+    text-transform: uppercase;
 }
 
 .shop-logo {
@@ -37,5 +38,29 @@
     color: white;
     border: none;
     font-size: 1.2rem;
-    cursor: pointer
+    /* cursor: pointer */
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .shop-logo {
+        margin-left: 1rem;
+    }
+
+    .shop-logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .links .nav-menu {
+        display: none;
+    }
+
+    .links {
+        margin-right: 1rem;
+    }
 }

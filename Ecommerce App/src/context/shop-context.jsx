@@ -38,15 +38,6 @@ export const ShopContextProvider = (props) => {
     setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
   };
 
-  cartItemsLength = cartItems.length;
-  console.log(cartItems);
-  // PRODUCTS.forEach((product) => {
-  //   console.log(product.id);
-  // });
-
-  const sumValues = () => Object.values(cartItems).reduce((a, b) => a + b, 0);
-  console.log(sumValues);
-
   function sumCartItems(obj) {
     let sum = 0;
     for (let el in obj) {

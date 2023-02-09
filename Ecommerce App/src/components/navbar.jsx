@@ -12,14 +12,6 @@ export const Navbar = (props) => {
   const { cartItems, updateCartItemCount, sumCartItems } =
     useContext(ShopContext);
 
-  // let cartItemsInput = document.querySelector(".cart-items");
-  // console.log(cartItemsInput.value);
-  // if (cartItemsInput.value > 0) {
-  //   cartItemsInput.style.display = "block";
-  // } else {
-  //   cartItemsInput.style.display = "none";
-  // }
-
   return (
     <div className="navbar">
       <div className="shop-logo">
@@ -31,7 +23,7 @@ export const Navbar = (props) => {
         <Link className="nav-menu" to="/">
           Shop
         </Link>
-        <Link to="/cart">
+        <Link to="/cart" className="cart-link">
           <ShoppingCart size="32" />
           <div>
             {sumCartItems(cartItems) > 0 ? (

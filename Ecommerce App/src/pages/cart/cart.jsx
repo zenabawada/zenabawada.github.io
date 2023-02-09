@@ -30,7 +30,7 @@ export const Cart = () => {
           <button>Checkout</button>
         </div>
       ) : (
-        <h1>Your Cart is Empty</h1>
+        <h1>Your cart is empty</h1>
       )}
     </div>
   );
