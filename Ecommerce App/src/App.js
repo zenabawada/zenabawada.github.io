@@ -7,6 +7,7 @@ import { Footer } from "./components/footer";
 import { Cart } from "./pages/cart/cart";
 import { Shop } from "./pages/shop/shop";
 import { ProductPage } from "./pages/product/productpage";
+import { ProductPageAR } from "./pages/productAR/productARpage";
 import { ShopContextProvider } from "./context/shop-context";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/:productId" element={<ProductPage />} />
+            <Route path="/tryar/:productId" element={<ProductPageAR />} />
           </Routes>
           <Footer />
         </Router>

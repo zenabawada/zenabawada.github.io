@@ -54,9 +54,38 @@ h1 {
     margin: 1rem 0;
 }
 
-.product img {
+.product-shop__image img {
     width: 100%;
+}
+
+.product-shop__image {
     border-bottom: solid 1px var(--container-color);
+    position: relative;
+}
+
+.product-shop__VR-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    border: none;
+    margin: 0.75rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.product-shop__VR-btn:hover {
+    opacity: 0.8;
+}
+
+.product-shop__VR-btn i {
+    color: white;
+    font-size: 1.25rem;
 }
 
 .product .description {
@@ -104,7 +133,7 @@ h1 {
         border-bottom: solid 1px var(--container-color);       
     }
 
-    .product img {
+    .product-shop__image img {
         width: 100%;
         border-bottom: 0;
     }

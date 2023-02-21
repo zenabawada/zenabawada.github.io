@@ -4,10 +4,44 @@ import product3 from "./assets/03.jpg";
 import product4 from "./assets/04.jpg";
 import product5 from "./assets/05.jpg";
 import product6 from "./assets/06.jpg";
+import product7 from "./assets/07.jpg";
+import product8 from "./assets/08.jpg";
+import product9 from "./assets/09.jpg";
 
 export const PRODUCTS = [
   {
     id: 1,
+    productName: "Fire",
+    price: 79.99,
+    productImage: product7,
+    gender: "Female",
+    type: "Sneakers",
+    color: "Red",
+    sizes: [5, 5.5, 6, 7, 7.5, 8.5, 9, 10, 11, 12, 13],
+    frame: "https://app.vectary.com/p/72hfK7fNtrvcE3vQDLvHhC",
+  },
+  {
+    id: 2,
+    productName: "Hyper",
+    price: 79.99,
+    productImage: product8,
+    gender: "Female",
+    type: "Sneakers",
+    color: "Black",
+    sizes: [5, 5.5, 6, 7, 7.5, 8.5, 9, 10, 11, 12, 13],
+  },
+  {
+    id: 3,
+    productName: "Ocean",
+    price: 79.99,
+    productImage: product9,
+    gender: "Female",
+    type: "Sneakers",
+    color: "Blue",
+    sizes: [5, 5.5, 6, 7, 7.5, 8.5, 9, 10, 11, 12, 13],
+  },
+  {
+    id: 4,
     productName: "Refresh",
     price: 59.99,
     productImage: product1,
@@ -17,7 +51,7 @@ export const PRODUCTS = [
     sizes: [6, 8.5],
   },
   {
-    id: 2,
+    id: 5,
     productName: "Massif",
     price: 54.98,
     productImage: product2,
@@ -27,7 +61,7 @@ export const PRODUCTS = [
     sizes: [8, 8.5, 9, 10],
   },
   {
-    id: 3,
+    id: 6,
     productName: "Alps",
     price: 119.99,
     productImage: product3,
@@ -37,7 +71,7 @@ export const PRODUCTS = [
     sizes: [6, 6.5, 8.5, 10, 11],
   },
   {
-    id: 4,
+    id: 7,
     productName: "Refreshh",
     price: 59.99,
     productImage: product4,
@@ -47,7 +81,7 @@ export const PRODUCTS = [
     sizes: [7.5, 8, 9, 10, 11],
   },
   {
-    id: 5,
+    id: 8,
     productName: "Cesta-high",
     price: 44.98,
     productImage: product5,
@@ -57,7 +91,7 @@ export const PRODUCTS = [
     sizes: [8, 12],
   },
   {
-    id: 6,
+    id: 9,
     productName: "Drake",
     price: 89.99,
     productImage: product6,
