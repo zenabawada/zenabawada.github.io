@@ -50,6 +50,7 @@
 
     .product-details__VR iframe {
         height: 50vh;
+        border-bottom: solid 1px var(--container-color);
     }
 
     .product-details__VR .info {

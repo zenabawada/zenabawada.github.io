@@ -12,6 +12,7 @@ import { ProductPageVR } from "./pages/productVR/productVRpage";
 import { ShopContextProvider } from "./context/shop-context";
 import { ShopWomen } from "./pages/shopWomen/shopWomen";
 import { ShopMen } from "./pages/shopMen/shopMen";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   return (
@@ -19,15 +20,17 @@ function App() {
       <ShopContextProvider>
         <Router>
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Shop />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/:productId" element={<ProductPage />} />
-            <Route path="/try3d/:productId" element={<ProductPageVR />} />
-            <Route path="/try3d" element={<ShopVR />} />
-            <Route path="/women" element={<ShopWomen />} />
-            <Route path="/men" element={<ShopMen />} />
-          </Routes>
+          <ScrollToTop>
+            <Routes>
+              <Route path="/" element={<Shop />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/:productId" element={<ProductPage />} />
+              <Route path="/try3d/:productId" element={<ProductPageVR />} />
+              <Route path="/try3d" element={<ShopVR />} />
+              <Route path="/women" element={<ShopWomen />} />
+              <Route path="/men" element={<ShopMen />} />
+            </Routes>
+          </ScrollToTop>
           <Footer />
         </Router>
       </ShopContextProvider>

@@ -415,6 +415,8 @@ table, tr, td {
 
     .klarna__container {
         padding: 0 1.25rem;
+        max-height: 100vh;
+        overflow-y: scroll;
     }
 
     .klarna__container h2 {
