@@ -1,0 +1,57 @@
+
+.products-page__VR {
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.product-single__VR {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.product-shop__image__VR {
+    position: relative;
+}
+
+.product-shop__image__VR iframe {
+    /* border-radius: 0.5rem; */
+}
+
+.product-shop__VR-text {
+    background-color: transparent;
+    border: 1px solid rgb(19, 19, 19);
+    min-width: 100px;
+    padding: 0.75rem 1rem;
+    border-radius: 15px;
+    font-family: 'Lato', sans-serif;
+    margin: 0 0 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .products-page__VR {
+        flex-flow: column wrap;
+        gap: 1rem;
+    }
+
+    .VRdescription {
+        margin-bottom: 0;
+    }
+
+    .product-shop__image__VR iframe {
+        width: 100vw;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .product-shop__VR-text:hover {
+        cursor: pointer;
+        background-color: rgb(19, 19, 19);
+        color: white;
+    }
+}

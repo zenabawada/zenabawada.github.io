@@ -6,9 +6,12 @@ import { Footer } from "./components/footer";
 
 import { Cart } from "./pages/cart/cart";
 import { Shop } from "./pages/shop/shop";
+import { ShopVR } from "./pages/shopVR/shopVR";
 import { ProductPage } from "./pages/product/productpage";
-import { ProductPageAR } from "./pages/productAR/productARpage";
+import { ProductPageVR } from "./pages/productVR/productVRpage";
 import { ShopContextProvider } from "./context/shop-context";
+import { ShopWomen } from "./pages/shopWomen/shopWomen";
+import { ShopMen } from "./pages/shopMen/shopMen";
 
 function App() {
   return (
@@ -20,7 +23,10 @@ function App() {
             <Route path="/" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/:productId" element={<ProductPage />} />
-            <Route path="/tryar/:productId" element={<ProductPageAR />} />
+            <Route path="/try3d/:productId" element={<ProductPageVR />} />
+            <Route path="/try3d" element={<ShopVR />} />
+            <Route path="/women" element={<ShopWomen />} />
+            <Route path="/men" element={<ShopMen />} />
           </Routes>
           <Footer />
         </Router>

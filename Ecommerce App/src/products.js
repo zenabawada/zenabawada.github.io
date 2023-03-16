@@ -11,34 +11,48 @@ import product9 from "./assets/09.jpg";
 export const PRODUCTS = [
   {
     id: 1,
-    productName: "Fire",
+    productName: "Blaze",
+    description:
+      "Blaze is a striking red shoe that's designed to make a bold statement. Its sleek design and vibrant color will set your heart ablaze, while its comfortable fit and durable materials ensure it's reliable for any adventure. Slip on Blaze and unleash your inner spark today.",
     price: 79.99,
     productImage: product7,
-    gender: "Female",
+    gender: "Unisex",
     type: "Sneakers",
     color: "Red",
     sizes: [5, 5.5, 6, 7, 7.5, 8.5, 9, 10, 11, 12, 13],
     frame: "https://app.vectary.com/p/72hfK7fNtrvcE3vQDLvHhC",
+    selectedSize: null,
+    selectedID: null,
   },
   {
     id: 2,
-    productName: "Hyper",
+    productName: "Velocity",
+    description:
+      "Velocity is a sleek and modern sneaker that's designed to keep you moving at top speed. With its bold black and blue color scheme and streamlined design, this shoe is the perfect choice for anyone who wants to make a statement while also enjoying the comfort and support of a high-quality sneaker. \n\nThe shoe's lightweight construction and flexible materials ensure that you can move with ease and agility, while the durable sole provides traction and stability for any activity. Whether you're hitting the gym, running errands, or simply hanging out with friends, Velocity is the perfect sneaker to help you stay on the move with style and confidence.",
     price: 79.99,
     productImage: product8,
-    gender: "Female",
+    gender: "Unisex",
     type: "Sneakers",
     color: "Black",
     sizes: [5, 5.5, 6, 7, 7.5, 8.5, 9, 10, 11, 12, 13],
+    frame: "https://app.vectary.com/p/0tNMilLw1jGB4LOsMJaLud",
+    selectedSize: null,
+    selectedID: null,
   },
   {
     id: 3,
-    productName: "Ocean",
+    productName: "Seabreeze",
+    description:
+      "The style and design of Seabreeze are inspired by the natural beauty and serenity of the ocean. The shoe's clean lines and subtle details evoke images of waves lapping at the shore, while the soft blue color reflects the tranquil depths of the sea.\n\n Whether you're exploring a virtual coral reef or simply taking a moment to breathe and relax, Seabreeze is the perfect shoe to help you stay grounded and connected to the beauty of the natural world. So slip on Seabreeze and immerse yourself in the soothing embrace of the ocean today.",
     price: 79.99,
     productImage: product9,
-    gender: "Female",
+    gender: "Unisex",
     type: "Sneakers",
     color: "Blue",
     sizes: [5, 5.5, 6, 7, 7.5, 8.5, 9, 10, 11, 12, 13],
+    frame: "https://app.vectary.com/p/17DwKBS29whSBvrfrP0bbg",
+    selectedSize: null,
+    selectedID: null,
   },
   {
     id: 4,
@@ -49,6 +63,8 @@ export const PRODUCTS = [
     type: "Sneakers",
     color: "Black",
     sizes: [6, 8.5],
+    selectedSize: null,
+    selectedID: null,
   },
   {
     id: 5,
@@ -59,6 +75,8 @@ export const PRODUCTS = [
     type: "Sneakers",
     color: "Bone Multi",
     sizes: [8, 8.5, 9, 10],
+    selectedSize: null,
+    selectedID: null,
   },
   {
     id: 6,
@@ -69,6 +87,8 @@ export const PRODUCTS = [
     type: "Boots",
     color: "Ice",
     sizes: [6, 6.5, 8.5, 10, 11],
+    selectedSize: null,
+    selectedID: null,
   },
   {
     id: 7,
@@ -79,6 +99,8 @@ export const PRODUCTS = [
     type: "Sneakers",
     color: "Blue",
     sizes: [7.5, 8, 9, 10, 11],
+    selectedSize: null,
+    selectedID: null,
   },
   {
     id: 8,
@@ -89,6 +111,8 @@ export const PRODUCTS = [
     type: "Sneakers",
     color: "Light Beige",
     sizes: [8, 12],
+    selectedSize: null,
+    selectedID: null,
   },
   {
     id: 9,
@@ -99,5 +123,7 @@ export const PRODUCTS = [
     type: "Boots",
     color: "Dark Brown",
     sizes: [8, 9, 10, 11, 12, 13],
+    selectedSize: null,
+    selectedID: null,
   },
 ];

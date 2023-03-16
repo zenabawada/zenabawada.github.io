@@ -1,7 +1,8 @@
 .navbar {
     width: 100%;
     height: 80px;
-    background-color: rgb(19, 19, 19);
+    /* background-color: rgb(19, 19, 19); */
+    border-bottom: solid 1px var(--container-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,10 +17,18 @@
 
 .links a {
     text-decoration: none;
-    color: white;
+    color: rgb(19, 19, 19);
     font-size: 1.25rem;
     display: flex;
     text-transform: uppercase;
+}
+
+.links a:hover {
+    font-weight: 600;
+}
+
+.links .cart-link:hover {
+    opacity: 0.8;
 }
 
 .shop-logo {
@@ -28,25 +37,41 @@
 
 .shop-logo a {
     text-decoration: none;
-    color: white;
+    color: rgb(19, 19, 19);
     font-size: 1.25rem;
     font-family: 'Unbounded', cursive;
 }
 
+.shop-logo a h1:hover {
+    background-color: black;
+    background-image: linear-gradient(45deg, rgba(74,65,232,1) 0%, rgba(89,40,213,1) 47%, rgba(173,54,209,1) 100%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
 .cart-items {
     background-color: transparent;
-    color: white;
+    color: var(--text-color);
     border: none;
     font-size: 1.2rem;
-    /* cursor: pointer */
+    overflow-x: visible;
+}
+
+.cart-items-number {
+    cursor: pointer;
 }
 
 .cart-link {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
-
+/* Mobile */
 @media only screen and (max-width: 600px) {
     .shop-logo {
         margin-left: 1rem;
@@ -56,11 +81,41 @@
         font-size: 1.5rem;
     }
 
+    .shop-logo a h1:hover {
+        background-image: none
+    }
+
+    .shop-logo a h1:active {
+        background-color: black;
+        background-image: linear-gradient(45deg, rgba(74,65,232,1) 0%, rgba(89,40,213,1) 47%, rgba(173,54,209,1) 100%);
+        background-size: 100%;
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+    }
+
+    .links .cart-link:hover {
+        opacity: 1;
+    }
+
     .links .nav-menu {
         display: none;
     }
 
     .links {
         margin-right: 1rem;
+    }    
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .shop-logo {
+        margin-left: 1.5rem;
+    }
+
+    .links {
+        margin-right: 1.5rem
     }
 }

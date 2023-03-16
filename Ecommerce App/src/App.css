@@ -8,11 +8,11 @@
 
 * {
   overflow-x: hidden;
-
 }
 
 body {
   font-family: 'Lato', sans-serif;
+  color: var(--text-color);
 }
 
 a {

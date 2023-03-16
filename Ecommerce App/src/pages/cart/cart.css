@@ -13,17 +13,20 @@
 
 .cart-item {
     width: fit-content;
-    min-width: 25vw;
+    min-width: 15vw;
     height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: solid 1px lightgrey;
     margin: 30px;
-    padding-right: 6rem;
+    gap: 1.5rem;
+    /* padding-right: 6rem; */
 }
 
-.cart-item a {
+
+.cart-item>a {
+    width: 50%;
     height: auto;
 }
 
@@ -32,9 +35,10 @@
 }
 
 .cart-item .description {
-    /* width: 100%; */
+    width: fit-content;
     font-size: 1.75rem;
     overflow-x: visible;
+    padding-right: 3rem;
 }
 
 .count-handler {
@@ -83,31 +87,54 @@
 .description p {
     color: black;
     margin: 0;
-}
-
-.cart-item a {
-    width: auto;
-}
-
-.description p {
     text-align: start;
     white-space: nowrap;
 }
+
+
+.cart-item__size {
+    font-size: 1.25rem;
+}
+
+.cart-item__size span {
+    padding-left: 0.25rem;
+}
+
 
 @media only screen and (max-width: 600px) {
     .cart-item {
         padding: 0;
         flex-flow: column wrap;
         margin: 30px 10px;
-        width: 80vw;
+        width: 85vw;
+        gap: 0;
+    }
+
+    .cart-item a {
+        width: 100%;
+    }
+
+    .cart-item img {
+        width: 90%;
+        height: 30vh;
+        object-fit: cover;
     }
 
     .cart-item .description {
-        width: fit-content;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding-right: 0;
     }
 
     .description {
         align-items: center;
         margin-bottom: 2rem;
+    }
+
+    .description p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

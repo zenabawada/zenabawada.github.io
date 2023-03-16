@@ -37,13 +37,6 @@ export const Product = (props) => {
           <p>${price}</p>
         </div>
       </Link>
-
-      {/* <button
-        className="addToCartBtn addToCartBtn_ShopMobile"
-        onClick={() => addToCart(id)}
-      >
-        Add To Cart {cartItemAmount > 0 && <>({cartItemAmount})</>}
-      </button> */}
     </div>
   );
 };

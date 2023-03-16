@@ -20,6 +20,9 @@ export const Navbar = (props) => {
         </Link>
       </div>
       <div className="links">
+        <Link className="nav-menu__VR" to="/try3d">
+          Try3D
+        </Link>
         <Link className="nav-menu" to="/">
           Shop
         </Link>
@@ -28,7 +31,7 @@ export const Navbar = (props) => {
           <div>
             {sumCartItems(cartItems) > 0 ? (
               <input
-                className="cart-items"
+                className="cart-items cart-items-number"
                 value={sumCartItems(cartItems)}
                 type="button"
                 // data={product}
