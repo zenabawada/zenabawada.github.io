@@ -382,6 +382,8 @@ table, tr, td {
 
     .product-details img {
         width: 100%;
+        border: none;
+        border-bottom: solid 1px var(--container-color);
     }
 
     .p-details {
