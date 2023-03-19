@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { PRODUCTS } from "../../products";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import klarnaBadge from "../../assets/klarna_badge.svg";
 import "./productpage.css";
 import "./script.js";
 
@@ -189,311 +190,337 @@ export const ProductPage = () => {
           async="true"
         ></script>
       </Helmet>
-      <div className="p-image">
-        <img src={thisProduct.productImage} />
-        {thisProduct.frame ? (
-          <Link to={`/try3d/${thisProduct.id}`}>
-            <button className="product-shop__VR-btn">3D</button>
-          </Link>
-        ) : null}
+      <div className="p-breadcrumb">
+        <nav>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            {thisProduct.gender === "Female" ? (
+              <li>
+                <a href="/women">Women</a>
+              </li>
+            ) : (
+              <li>
+                <a href="/men">Men</a>
+              </li>
+            )}
+          </ul>
+        </nav>
       </div>
-      <div className="p-details">
-        <p className="p-gender">{thisProduct.gender}</p>
-        <h1 className="p-title">{thisProduct.productName}</h1>
-        <span className="p-price">${thisProduct.price}</span>
-        <span className="p-klarna">
-          or {equalPayments} equal payments of
-          {`$${paymentsAmount.toFixed(2)} `}
-          with <b>Klarna</b>. <a className="klarna__btn">Learn More</a>
-        </span>
-        <div className="klarna-modal">
-          <div className="klarna-modal__wrapper">
-            <div className="klarna-modal__close-btn">&times;</div>
-            <div className="klarna-modal__title">Klarna</div>
-            <div className="klarna__container">
-              <h2>
-                {equalPayments} equal payments of
-                {` $${paymentsAmount.toFixed(2)}`}.
-              </h2>
-              <p>Buy what you love and split the cost. It’s that easy.</p>
-              <ul>
-                <li>
-                  <div className="item__icon"></div>
-                  <div className="item__text">
-                    <p>Add item(s) to your cart.</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="item__icon"></div>
-                  <div className="item__text">
-                    <p>Go to checkout and choose Klarna</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="item__icon"></div>
-                  <div className="item__text">
-                    <p>Enter your debit or credit card information.</p>
-                  </div>
-                </li>
-                <li>
-                  <div className="item__icon"></div>
-                  <div className="item__text">
-                    <p>
-                      Your first payment is taken when the order is processed
-                      and the remaining 3 are automatically taken every two
-                      weeks.
-                    </p>
-                  </div>
-                </li>
-              </ul>
-              <p className="klarna__disclaimer">
-                Please note that a higher initial payment may be required for
-                some purchases. Pay later in 4 terms available{" "}
-                <a
-                  href="https://cdn.klarna.com/1.0/shared/content/legal/terms/0/en_ca/paylaterin4"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  here
-                </a>
-                . For Quebec residents these Pay later in 4{" "}
-                <a
-                  href="https://cdn.klarna.com/1.0/shared/content/legal/terms/0/en_ca/paylaterin4_quebec"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  terms
-                </a>{" "}
-                are applicable.
-              </p>
-              <button className="klarna-modal__bottom-close-btn">Close</button>
+      <div className="p-content">
+        <div className="p-image">
+          <img src={thisProduct.productImage} />
+          {thisProduct.frame ? (
+            <Link to={`/try3d/${thisProduct.id}`}>
+              <button className="product-shop__VR-btn">3D</button>
+            </Link>
+          ) : null}
+        </div>
+        <div className="p-details">
+          <p className="p-gender">{thisProduct.gender}</p>
+          <h1 className="p-title">{thisProduct.productName}</h1>
+          <span className="p-price">${thisProduct.price}</span>
+          <span className="p-klarna">
+            or {equalPayments} equal payments of
+            {`$${paymentsAmount.toFixed(2)} `}
+            with <b>Klarna</b>. <a className="klarna__btn">Learn More</a>
+          </span>
+          <div className="klarna-modal">
+            <div className="klarna-modal__wrapper">
+              <div className="klarna-modal__close-btn">&times;</div>
+              <div className="klarna-modal__title">Klarna</div>
+              <div className="klarna__container">
+                <h2>
+                  {equalPayments} equal payments of
+                  {` $${paymentsAmount.toFixed(2)}`}.
+                </h2>
+                <p>Buy what you love and split the cost. It’s that easy.</p>
+                <ul>
+                  <li>
+                    <div className="item__icon"></div>
+                    <div className="item__text">
+                      <p>Add item(s) to your cart.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item__icon"></div>
+                    <div className="item__text item-klarna__text">
+                      <p>Go to checkout and choose</p>
+                      <img src={klarnaBadge} alt="Klarna badge" />
+                    </div>
+                    <div></div>
+                  </li>
+                  <li>
+                    <div className="item__icon"></div>
+                    <div className="item__text">
+                      <p>Enter your debit or credit card information.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item__icon"></div>
+                    <div className="item__text">
+                      <p>
+                        Your first payment is taken when the order is processed
+                        and the remaining 3 are automatically taken every two
+                        weeks.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+                <p className="klarna__disclaimer">
+                  Please note that a higher initial payment may be required for
+                  some purchases. Pay later in 4 terms available{" "}
+                  <a
+                    href="https://cdn.klarna.com/1.0/shared/content/legal/terms/0/en_ca/paylaterin4"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    here
+                  </a>
+                  . For Quebec residents these Pay later in 4{" "}
+                  <a
+                    href="https://cdn.klarna.com/1.0/shared/content/legal/terms/0/en_ca/paylaterin4_quebec"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    terms
+                  </a>{" "}
+                  are applicable.
+                </p>
+                <button className="klarna-modal__bottom-close-btn">
+                  Close
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="product-size-options">
-          <div className="product-size-header">
-            <span>Sizes</span>
-            <a className="find-size__btn">Find your size</a>
-            <div className="size-modal">
-              <div className="size-modal__wrapper">
-                <div className="modal__close-btn">&times;</div>
-                <div className="size-modal__title">Footware</div>
-                <div className="size-modal__content">
-                  <p>
-                    Half sizes are not available in all styles. Sizing may vary
-                    between style and type of footwear.
-                  </p>
-                  <ul>
-                    <li className="womens-sizes__btn sizes__btn">
-                      Women's sizes
-                    </li>
-                    <li className="mens-sizes__btn sizes__btn">Men's sizes</li>
-                  </ul>
-                  <div className="table-wrapper">
-                    <table className="womens-sizes__table">
-                      <tr>
-                        <th>US</th>
-                        <th>UK</th>
-                        <th>Eur</th>
-                        <th>In</th>
-                        <th>Cm</th>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>35</td>
-                        <td>8.8</td>
-                        <td>22.2</td>
-                      </tr>
-                      <tr>
-                        <td>6</td>
-                        <td>3</td>
-                        <td>36</td>
-                        <td>9</td>
-                        <td>23</td>
-                      </tr>
-                      <tr>
-                        <td>6.5</td>
-                        <td>4</td>
-                        <td>37</td>
-                        <td>9.3</td>
-                        <td>23.4</td>
-                      </tr>
-                      <tr>
-                        <td>7</td>
-                        <td>4.5</td>
-                        <td>37.5</td>
-                        <td>9.4</td>
-                        <td>23.8</td>
-                      </tr>
-                      <tr>
-                        <td>7.5</td>
-                        <td>5</td>
-                        <td>38</td>
-                        <td>9.6</td>
-                        <td>24.3</td>
-                      </tr>
-                      <tr>
-                        <td>8</td>
-                        <td>5.5</td>
-                        <td>38.5</td>
-                        <td>9.7</td>
-                        <td>24.7</td>
-                      </tr>
-                      <tr>
-                        <td>8.5</td>
-                        <td>6</td>
-                        <td>39</td>
-                        <td>9.8</td>
-                        <td>25.1</td>
-                      </tr>
-                      <tr>
-                        <td>9</td>
-                        <td>7</td>
-                        <td>40</td>
-                        <td>10.1</td>
-                        <td>25.5</td>
-                      </tr>
-                      <tr>
-                        <td>10</td>
-                        <td>8</td>
-                        <td>41</td>
-                        <td>10.3</td>
-                        <td>26.4</td>
-                      </tr>
-                      <tr>
-                        <td>10.5</td>
-                        <td>9</td>
-                        <td>42</td>
-                        <td>10.5</td>
-                        <td>26.8</td>
-                      </tr>
-                      <tr>
-                        <td>11</td>
-                        <td>9.5</td>
-                        <td>42.5</td>
-                        <td>10.7</td>
-                        <td>27.2</td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div className="table-wrapper">
-                    <table className="mens-sizes__table">
-                      <tr>
-                        <th>US</th>
-                        <th>UK</th>
-                        <th>Eur</th>
-                        <th>In</th>
-                        <th>Cm</th>
-                      </tr>
-                      <tr>
-                        <td>7</td>
-                        <td>6</td>
-                        <td>39</td>
-                        <td>10.1</td>
-                        <td>25.6</td>
-                      </tr>
-                      <tr>
-                        <td>7.5</td>
-                        <td>6.5</td>
-                        <td>40</td>
-                        <td>10.1</td>
-                        <td>25.7</td>
-                      </tr>
-                      <tr>
-                        <td>8</td>
-                        <td>7</td>
-                        <td>41</td>
-                        <td>10.2</td>
-                        <td>25.8</td>
-                      </tr>
-                      <tr>
-                        <td>9</td>
-                        <td>8</td>
-                        <td>42</td>
-                        <td>10.3</td>
-                        <td>26</td>
-                      </tr>
-                      <tr>
-                        <td>9.5</td>
-                        <td>8.5</td>
-                        <td>42.5</td>
-                        <td>10.4</td>
-                        <td>26.4</td>
-                      </tr>
-                      <tr>
-                        <td>10</td>
-                        <td>9</td>
-                        <td>43</td>
-                        <td>10.5</td>
-                        <td>26.8</td>
-                      </tr>
-                      <tr>
-                        <td>10.5</td>
-                        <td>9.5</td>
-                        <td>43.5</td>
-                        <td>10.7</td>
-                        <td>27.3</td>
-                      </tr>
-                      <tr>
-                        <td>11</td>
-                        <td>10</td>
-                        <td>44</td>
-                        <td>10.9</td>
-                        <td>27.7</td>
-                      </tr>
-                      <tr>
-                        <td>12</td>
-                        <td>11</td>
-                        <td>45</td>
-                        <td>11.2</td>
-                        <td>28.5</td>
-                      </tr>
-                      <tr>
-                        <td>13</td>
-                        <td>12</td>
-                        <td>46</td>
-                        <td>11.4</td>
-                        <td>29</td>
-                      </tr>
-                      <tr>
-                        <td>14</td>
-                        <td>13</td>
-                        <td>47</td>
-                        <td>11.6</td>
-                        <td>29.4</td>
-                      </tr>
-                    </table>
+          <div className="product-size-options">
+            <div className="product-size-header">
+              <span>Sizes</span>
+              <a className="find-size__btn">Find your size</a>
+              <div className="size-modal">
+                <div className="size-modal__wrapper">
+                  <div className="modal__close-btn">&times;</div>
+                  <div className="size-modal__title">Footware</div>
+                  <div className="size-modal__content">
+                    <p>
+                      Half sizes are not available in all styles. Sizing may
+                      vary between style and type of footwear.
+                    </p>
+                    <ul>
+                      <li className="womens-sizes__btn sizes__btn">
+                        Women's sizes
+                      </li>
+                      <li className="mens-sizes__btn sizes__btn">
+                        Men's sizes
+                      </li>
+                    </ul>
+                    <div className="table-wrapper">
+                      <table className="womens-sizes__table">
+                        <tr>
+                          <th>US</th>
+                          <th>UK</th>
+                          <th>Eur</th>
+                          <th>In</th>
+                          <th>Cm</th>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>2</td>
+                          <td>35</td>
+                          <td>8.8</td>
+                          <td>22.2</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>3</td>
+                          <td>36</td>
+                          <td>9</td>
+                          <td>23</td>
+                        </tr>
+                        <tr>
+                          <td>6.5</td>
+                          <td>4</td>
+                          <td>37</td>
+                          <td>9.3</td>
+                          <td>23.4</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>4.5</td>
+                          <td>37.5</td>
+                          <td>9.4</td>
+                          <td>23.8</td>
+                        </tr>
+                        <tr>
+                          <td>7.5</td>
+                          <td>5</td>
+                          <td>38</td>
+                          <td>9.6</td>
+                          <td>24.3</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>5.5</td>
+                          <td>38.5</td>
+                          <td>9.7</td>
+                          <td>24.7</td>
+                        </tr>
+                        <tr>
+                          <td>8.5</td>
+                          <td>6</td>
+                          <td>39</td>
+                          <td>9.8</td>
+                          <td>25.1</td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>7</td>
+                          <td>40</td>
+                          <td>10.1</td>
+                          <td>25.5</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>8</td>
+                          <td>41</td>
+                          <td>10.3</td>
+                          <td>26.4</td>
+                        </tr>
+                        <tr>
+                          <td>10.5</td>
+                          <td>9</td>
+                          <td>42</td>
+                          <td>10.5</td>
+                          <td>26.8</td>
+                        </tr>
+                        <tr>
+                          <td>11</td>
+                          <td>9.5</td>
+                          <td>42.5</td>
+                          <td>10.7</td>
+                          <td>27.2</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div className="table-wrapper">
+                      <table className="mens-sizes__table">
+                        <tr>
+                          <th>US</th>
+                          <th>UK</th>
+                          <th>Eur</th>
+                          <th>In</th>
+                          <th>Cm</th>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>6</td>
+                          <td>39</td>
+                          <td>10.1</td>
+                          <td>25.6</td>
+                        </tr>
+                        <tr>
+                          <td>7.5</td>
+                          <td>6.5</td>
+                          <td>40</td>
+                          <td>10.1</td>
+                          <td>25.7</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>7</td>
+                          <td>41</td>
+                          <td>10.2</td>
+                          <td>25.8</td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>8</td>
+                          <td>42</td>
+                          <td>10.3</td>
+                          <td>26</td>
+                        </tr>
+                        <tr>
+                          <td>9.5</td>
+                          <td>8.5</td>
+                          <td>42.5</td>
+                          <td>10.4</td>
+                          <td>26.4</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>9</td>
+                          <td>43</td>
+                          <td>10.5</td>
+                          <td>26.8</td>
+                        </tr>
+                        <tr>
+                          <td>10.5</td>
+                          <td>9.5</td>
+                          <td>43.5</td>
+                          <td>10.7</td>
+                          <td>27.3</td>
+                        </tr>
+                        <tr>
+                          <td>11</td>
+                          <td>10</td>
+                          <td>44</td>
+                          <td>10.9</td>
+                          <td>27.7</td>
+                        </tr>
+                        <tr>
+                          <td>12</td>
+                          <td>11</td>
+                          <td>45</td>
+                          <td>11.2</td>
+                          <td>28.5</td>
+                        </tr>
+                        <tr>
+                          <td>13</td>
+                          <td>12</td>
+                          <td>46</td>
+                          <td>11.4</td>
+                          <td>29</td>
+                        </tr>
+                        <tr>
+                          <td>14</td>
+                          <td>13</td>
+                          <td>47</td>
+                          <td>11.6</td>
+                          <td>29.4</td>
+                        </tr>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <ul className="size-wrapper">
+              {thisProduct["sizes"].map((item) => (
+                <div
+                  key={item}
+                  className="single-size-wrapper"
+                  onClick={(e) => {
+                    changeColor(e.target);
+                    thisProduct.selectedSize = e.target.innerText;
+                  }}
+                >
+                  <li>{item}</li>
+                </div>
+              ))}
+            </ul>
+            <span className="size__warning">Please select a size</span>
           </div>
-          <ul className="size-wrapper">
-            {thisProduct["sizes"].map((item) => (
-              <div
-                key={item}
-                className="single-size-wrapper"
-                onClick={(e) => {
-                  changeColor(e.target);
-                  thisProduct.selectedSize = e.target.innerText;
-                }}
-              >
-                <li>{item}</li>
-              </div>
-            ))}
-          </ul>
-          <span className="size__warning">Please select a size</span>
+          <button
+            className="addToCartBtn addToCartBtn_ProductMobile"
+            onClick={() => {
+              sizeWarning();
+            }}
+          >
+            Add To Cart {cartItemAmount > 0 && <>({cartItemAmount})</>}
+          </button>
         </div>
-        <button
-          className="addToCartBtn addToCartBtn_ProductMobile"
-          onClick={() => {
-            sizeWarning();
-          }}
-        >
-          Add To Cart {cartItemAmount > 0 && <>({cartItemAmount})</>}
-        </button>
       </div>
     </div>
   );

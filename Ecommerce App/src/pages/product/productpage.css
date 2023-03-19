@@ -17,10 +17,32 @@
     margin-top: 2rem !important;
 }
 
-.product-details {
+.p-breadcrumb {
     display: flex;
+    padding-left: 1.5rem;    
+}
+
+.p-breadcrumb ul {
+    padding: 0;
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.p-breadcrumb a {
+    color: rgb(92, 92, 92);
+}
+
+.p-breadcrumb ul li:not(:last-of-type)::after {
+    content: "/";
+    margin-left: 0.5rem;
+}
+
+.product-details {
+    display: block;
     justify-content: center;
-    margin: 5% 10%;
+    margin: 0 auto;
+    max-width: 66rem;
     /* gap: 5%; */
     min-height: 90vh;
 }
@@ -33,6 +55,11 @@
 .product-details img {
     max-width: 600px;
     border: solid 1px var(--container-color);
+}
+
+.p-content {
+    display: flex;
+    justify-content: center;
 }
 
 .p-details {
@@ -242,6 +269,18 @@
     opacity: 0.9;
 }
 
+.item-klarna__text {
+    display: flex;
+    align-items: center;
+}
+
+.item-klarna__text img {
+    height: 25px !important;
+    width: fit-content !important;
+    margin-left: 0.25rem;
+    border: none !important;
+}
+
 /* MODAL SIZES */
 .modal__visible {
     display: grid !important;
@@ -295,8 +334,8 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    color: rgb(204, 204, 204);
-    display: grid;
+    color: rgb(216, 216, 216);
+    display: flex;
     place-content: center;
 }
 
@@ -373,7 +412,7 @@ table, tr, td {
 }
 
 /* Mobile */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
     .product-details {
         flex-flow: column wrap;
         margin: 0 0 2rem;
@@ -384,6 +423,10 @@ table, tr, td {
         width: 100%;
         border: none;
         border-bottom: solid 1px var(--container-color);
+    }
+
+    .p-content {
+        flex-flow: column wrap;
     }
 
     .p-details {
@@ -457,6 +500,11 @@ table, tr, td {
     th, td {
         padding: 0.75rem;
     }
+
+    .p-breadcrumb a:active {
+        color: white;
+        background-color: var(--text-color);
+    }
 }
 
 /* Tablet */
@@ -469,7 +517,6 @@ table, tr, td {
 
     .product-details .p-image {
         border-bottom: solid 1px var(--container-color);
-
     }
 
     .product-details img {
@@ -480,7 +527,41 @@ table, tr, td {
         border: none;
     }
 
+    .p-content {
+        flex-flow: column wrap;
+    }
+
     .p-details {
         margin: 0 1.5rem;
-    }    
+        padding-left: 0;
+    }
+
+    .size-modal__wrapper {
+        padding: 6rem 1.5rem;
+    }
+
+    .size-modal__title {
+        left: 1.5rem;
+    }
+
+    .modal__close-btn, .klarna-modal__close-btn {
+        right: 1.5rem;
+    }
+
+    .p-breadcrumb a:active {
+        color: white;
+        background-color: var(--text-color);
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1000px) {
+    .p-breadcrumb a {
+        transition: all .1s ease-in-out;
+    }
+    
+    .p-breadcrumb a:hover {
+        color: white;
+        background-color: var(--text-color);
+    }
 }
