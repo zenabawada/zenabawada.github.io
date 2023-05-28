@@ -6,7 +6,7 @@ let navContainer = document.getElementById("navContainer");
 let mainWrap = document.getElementById("mainWrap");
 let content = document.getElementById("content");
 let aboutPic = document.getElementById("aboutPic");
-let siteLinks = document.querySelectorAll(".site-link");
+let siteLinks = document.querySelectorAll(".nav-item");
 
 // Footer Hover Settings
 let footerList = document.querySelectorAll(".footer-wrap__item");

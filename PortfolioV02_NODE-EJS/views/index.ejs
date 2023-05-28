@@ -7,72 +7,107 @@
       <!-- main content -->
       <div id="content">
         <article class="project-grid">
-          <div id="about" class="about-container">
+          <section id="aboutIntro" class="about-intro">
             <div
-              data-aos="fade-zoom-in"
-              data-aos-easing="ease-in-back"
-              data-aos-delay="200"
-              data-aos-duration="1250"
+              data-aos="fade-up"
+              data-aos-easing="ease-out-cubic"
+              data-aos-delay="100"
               data-aos-once="true"
-              class="about-graphics"
+              >
+              <h1>Zena Awada.</h1>
+            </div>
+            <div
+            data-aos="fade-up"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="200"
+            data-aos-once="true"
             >
-              <div id="aboutPic" class="about-picture"></div>
-              <!-- <img
-                class="background-shape"
-                src="images/vector-circle.png"
-                alt="Background nonagon shape"
-              /> -->
-              <img
-                data-aos="fade-right"
-                data-aos-delay="200"
-                data-aos-duration="1500"
+              <h2>Web Developer passionate about developing accessible and intuitive websites.</h2>
+            </div>
+            <div
+            data-aos="fade-up"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="300"
+            data-aos-once="true"
+            >
+              <p class="about-intro-p">As a web developer, I specialize in building outstanding digital experiences with some design involvement. Currently, my focus is on creating accessible and human-centered products at <a href="https://zodiac.tech" target="_blank">Zodiac</a>.</p>
+            </div>
+            <div class="intro-button"
+            data-aos="fade-up"
+            data-aos-easing="ease-out-cubic"
+            data-aos-delay="400"
+            data-aos-once="true"
+            >
+              <a href="#webprojects">Check out my projects</a>
+            </div>
+          </section>
+          <!-- ABOUT SECTION -->
+
+          <section id="about" class="about-container">
+            <div data-aos-once="true" data-aos="fade-up" class="about-me-title-section">
+              <h1 class="about-me-title">about me</h1>
+            </div>
+            <div class="about-me-wrapper">
+              <div
+                class="about-graphics"
+              >
+                <div id="aboutPic" class="about-picture"
+                data-aos="fade-up"
+                data-aos-easing="ease-out-cubic"
+                data-aos-delay="300"
+                data-aos-once="true"></div>
+                <!-- <img
+                  class="background-shape"
+                  src="images/vector-circle.png"
+                  alt="Background nonagon shape"
+                /> -->
+                <img
+                data-aos="fade-up"
+                data-aos-easing="ease-out-cubic"
+                data-aos-delay="400"
                 data-aos-once="true"
-                class="background-lineart"
-                src="images/aboutpic-lineart-02.png"
-                alt="Background lineart"
-              />
+                  class="background-lineart"
+                  src="images/aboutpic-lineart-02.png"
+                  alt="Background lineart"
+                />
+              </div>
+              <div
+              data-aos="fade-up"
+              data-aos-easing="ease-out-cubic"
+              data-aos-delay="200"
+              data-aos-once="true"
+                class="about-text"
+              >
+                <p>
+                  Having a graphic design background and as someone who is always seeking personal and professional growth, I am continuously on the lookout for new learning opportunities. I prefer not to remain complacent or too comfortable in my current position and instead, I look forward to a future filled with chances to develop and expand my skills.
+                </p>
+                <p>
+                  My primary interest lies in constructing web applications that are both secure and efficient. I have a comprehensive understanding of <b>front-end development</b> tools, including jQuery, Vue.js, and React, as well as <b>back-end development tools</b>, such as Node.js, GraphQL, MongoDB, and AWS.
+                </p>
+                <hr class="about-hr" />
+                <ul class="about-list">
+                  <li><a href="mailto:zenaawada@outlook.com">Email</a></li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/in/zenaawada/"
+                      target="_blank"
+                      >Linkedin</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://github.com/zenabawada" target="_blank"
+                      >GitHub</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <div
-              data-aos="fade-right"
-              data-aos-delay="400"
-              data-aos-duration="1250"
-              data-aos-once="true"
-              class="about-text"
-            >
-              <h1 class="name-heading">
-                Zena Awada
-              </h1>
-              <h2 class="name-subheading">
-                <span>Front-end developer</span> based in Toronto, Canada.
-              </h2>
-              <p>
-                Having a graphic design background and as someone who is always seeking personal and professional growth, I am continuously on the lookout for new learning opportunities. I prefer not to remain complacent or too comfortable in my current position and instead, I look forward to a future filled with chances to develop and expand my skills.
-              </p>
-              <p>
-                My primary interest lies in constructing web applications that are both secure and efficient. I have a comprehensive understanding of <b>front-end development</b> tools, including jQuery, Vue.js, and React, as well as <b>back-end development tools</b>, such as Node.js, MongoDB, and AWS.
-              </p>
-              <hr class="about-hr" />
-              <ul class="about-list">
-                <li><a href="mailto:zenaawada@outlook.com">Email</a></li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/zenaawada/"
-                    target="_blank"
-                    >Linkedin</a
-                  >
-                </li>
-                <li>
-                  <a href="https://github.com/zenabawada" target="_blank"
-                    >GitHub</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
+
+          </section>
 
           <section class="skills-container">
-            <h1 class="projects-title">my skillset</h1>
+            <h1 data-aos-once="true" data-aos="fade-up" class="projects-title">my skillset</h1>
             <ul
               id="skills"
               data-aos="fade-up"
@@ -94,6 +129,13 @@
               </li>
               <li><i class="fa-brands fa-vuejs"></i>Vue.js</li>
               <li><i class="fa-brands fa-react"></i>React</li>
+              <li>
+                <img
+                  class="GraphQL"
+                  src="images/graphql-logo.png"
+                  alt="GraphQL Logo"
+                />GraphQL
+              </li>
               <li><i class="fa-brands fa-node-js"></i>Node.js</li>
               <li><i class="fa-brands fa-aws"></i>AWS</li>
               <li><i class="fa-brands fa-wordpress-simple"></i>WordPress</li>
@@ -107,12 +149,13 @@
           </section>
 
           <!-- WEB PROJECTS HEADER -->
-          <header id="web-page" class="projects-header">
-            <h2>Featured projects</h2>
-            <h1 class="projects-title">web</h1>
-          </header>
 
-          <div class="projects-container">
+
+          <section id="webprojects" class="projects-container">
+            <div data-aos-once="true" data-aos="fade-up" id="web-projects" class="projects-header">
+              <h2>Featured projects</h2>
+              <h1 class="projects-title">web</h1>
+            </div>
             <ul class="projects-list">
               <li
               data-aos="fade-up"
@@ -156,19 +199,19 @@
                 </h2>
                 <p class="caption">A web application that can perform <b>CRUD</b> operations and displays both <b>static and dynamic</b> content. The site consists of a series of blog articles that are added by logged in users. Unregistered users can only view the articles.<br><br> Articles and user information can be visualized, edited or deleted. <b>Cookies</b> have been used to store users' information in the browser, and a 404 error page has been implemented.</p>
 
-                <ul class="links">
-                  <li>
-                    <a
-                      href="http://a2myblog-env.eba-2upkmxqh.ca-central-1.elasticbeanstalk.com"
-                      target="_blank"
-                      >LIVE SITE</a
-                    >
-                  </li>
+                <ul class="links">                  
                   <li>
                     <a
                       href="https://github.com/zenabawada/zenabawada.github.io/tree/main/CRUD%20Web%20App"
                       target="_blank"
-                      >REPO</a
+                      ><i class="fa-brands fa-github fa-lg"></i></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="http://a2myblog-env.eba-2upkmxqh.ca-central-1.elasticbeanstalk.com"
+                      target="_blank"
+                      ><i class="fa-solid fa-arrow-up-right-from-square"></i></a
                     >
                   </li>
                 </ul>
@@ -214,16 +257,16 @@
                   <ul class="links">
                     <li>
                       <a
-                        href="https://worldwide-poverty-map.netlify.app"
+                        href="https://github.com/zenabawada/zenabawada.github.io/tree/main/Worldwide%20Poverty%20Rate%20Interactive%20Map"
                         target="_blank"
-                        >LIVE SITE</a
+                        ><i class="fa-brands fa-github fa-lg"></i></a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://github.com/zenabawada/zenabawada.github.io/tree/main/Worldwide%20Poverty%20Rate%20Interactive%20Map"
+                        href="https://worldwide-poverty-map.netlify.app"
                         target="_blank"
-                        >REPO</a
+                        ><i class="fa-solid fa-arrow-up-right-from-square"></i></a
                       >
                     </li>
                   </ul>
@@ -276,29 +319,29 @@
                   <ul class="links">
                     <li>
                       <a
-                        href="https://vesho.zenawada.ca"
+                        href="https://github.com/zenabawada/zenabawada.github.io/tree/main/Zenawada/OpenAI"
                         target="_blank"
-                        >LIVE SITE</a
+                        ><i class="fa-brands fa-github fa-lg"></i></a
                       >
                     </li>
                     <li>
                       <a
-                        href="https://github.com/zenabawada/zenabawada.github.io/tree/main/Zenawada/OpenAI"
+                        href="https://vesho.zenawada.ca"
                         target="_blank"
-                        >REPO</a
+                        ><i class="fa-solid fa-arrow-up-right-from-square "></i></a
                       >
                     </li>
                   </ul>
                 </div>
               </li>              
             </ul>
-          </div>
-          <div data-aos="fade-up"
-          data-aos-duration="8000"
+          </section>
+          <!-- CONTACT SECTION -->
+          <section data-aos="fade-up"
           data-aos-once="true" class="contact-me">
             <h2>Get In Touch</h2>
             <a href="mailto:contact@zenawada.ca">contact@zenawada.ca</a>
-          </div>
+          </section>
         </article>
       </div>
       <!-- end main content -->
