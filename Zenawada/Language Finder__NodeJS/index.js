@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 const fetch = require("isomorphic-fetch");
+require("dotenv").config();
 
 // app.get("/", (req, res) => {
 //   res.send("Hello World!");
@@ -13,6 +14,7 @@ const fetch = require("isomorphic-fetch");
 
 app.get("/open_ai", (req, res) => {
   const prompt = req.query.prompt;
+  const apiKey = process.env.OPENAI_API_KEY;
 
   // Make the fetch call to the OpenAI API here
   // Assuming it returns a Promise, you can use .then() to handle the result
@@ -20,8 +22,7 @@ app.get("/open_ai", (req, res) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization:
-        "Bearer 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",
+      Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({ prompt }),
   })
