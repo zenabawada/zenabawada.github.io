@@ -1,5 +1,3 @@
-fetchAnswer();
-
 let responsesArray =
   localStorage.getItem("responsesCache") == null
     ? []
@@ -31,19 +29,30 @@ function output(prompt, response) {
   if (response != null) {
     responsesArray.push({
       promptValue: prompt,
-      responseValue: response["choices"][0]["text"].split(" ")[1],
+      responseValue: response.result,
     });
     localStorage.setItem("responsesCache", JSON.stringify(responsesArray));
     UpdateResponses();
   }
 }
 
+// function output(prompt, response) {
+//   if (response != null) {
+//     responsesArray.push({
+//       promptValue: prompt,
+//       responseValue: response.result,
+//     });
+//     localStorage.setItem("responsesCache", JSON.stringify(responsesArray));
+//     UpdateResponses();
+//   }
+// }
+
 function UpdateResponses() {
   while (
-    responsesContainer.firstChild != null &&
+    responsesContainer.firstElementChild != null &&
     responsesContainer.childElementCount > 1
   ) {
-    responsesContainer.removeChild(responsesContainer.firstChild);
+    responsesContainer.removeChild(responsesContainer.firstElementChild);
   }
 
   for (let i = 0; i < responsesArray.length; i++) {
@@ -60,12 +69,13 @@ function UpdateResponses() {
 }
 
 function DrawResponse(response) {
-  const node = responsesContainer.lastChild;
+  const node = responsesContainer.lastElementChild;
   const clone = node.cloneNode(true);
   const id = "response-box-" + responsesContainer.childElementCount;
   clone.id = id;
 
-  responsesContainer.insertBefore(clone, responsesContainer.firstChild);
+  responsesContainer.insertBefore(clone, responsesContainer.firstElementChild);
+
   document
     .getElementById(id)
     .getElementsByClassName("promptSubmitted")[0].innerHTML =
@@ -117,30 +127,6 @@ function SetWaitingResponseState(imWaiting) {
   }
 }
 
-const fetchAnswer = async (event) => {
-  if (!promptText.value) return;
-
-  // SetWaitingResponseState(true);
-  try {
-    const res = await fetch("http://localhost:3000", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      },
-      body: JSON.stringify({
-        prompt: prompt.value,
-      }),
-    });
-    console.log(res);
-  } catch (error) {}
-  console.log(prompt.value);
-  event.preventDefault();
-};
-
-submitBtn.addEventListener("click", fetchAnswer, false);
-presetBtn.addEventListener("click", fetchAnswer, false);
-
 // submitBtn.onclick = function () {
 //   if (!promptText.value) return;
 
@@ -149,10 +135,9 @@ presetBtn.addEventListener("click", fetchAnswer, false);
 //     "https://afternoon-lowlands-42708.herokuapp.com/open_ai?prompt=" +
 //       promptText.value,
 //     {
+//       //   mode: "no-cors",
 //       method: "GET",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
+//       "Access-Control-Allow-Origin": "*",
 //     }
 //   )
 //     .then((data) => data.json())
@@ -166,6 +151,23 @@ presetBtn.addEventListener("click", fetchAnswer, false);
 //       SetWaitingResponseState(false);
 //     });
 // };
+
+submitBtn.onclick = function () {
+  if (!promptText.value) return;
+
+  SetWaitingResponseState(true);
+  fetch("/open_ai?prompt=" + encodeURIComponent(promptText.value))
+    .then((response) => response.json())
+    .then((data) => {
+      output(promptText.value, data);
+      promptText.value = "";
+      SetWaitingResponseState(false);
+    })
+    .catch(function (error) {
+      console.log("Request failed", error);
+      SetWaitingResponseState(false);
+    });
+};
 
 clearResponsesBtn.onclick = ClearReponses;
 presetBtn.onclick = promptPreset;
