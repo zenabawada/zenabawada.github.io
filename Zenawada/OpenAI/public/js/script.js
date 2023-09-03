@@ -1,0 +1,171 @@
+fetchAnswer();
+
+let responsesArray =
+  localStorage.getItem("responsesCache") == null
+    ? []
+    : JSON.parse(localStorage.getItem("responsesCache"));
+
+let form = document.getElementById("form");
+let promptText = document.getElementById("prompt");
+let responseSubmitted = document.getElementById("responseSubmitted");
+let promptSubmitted = document.getElementById("promptSubmitted");
+let submitBtn = document.getElementById("submit");
+let clearResponsesBtn = document.getElementById("clearResponsesButton");
+
+let responsesContainer = document.getElementById("responses-container");
+let node = document.getElementById("response-box");
+let presetBtn = document.getElementById("promptPreset");
+let loadingModal = document.getElementById("loadingModal");
+
+console.log(
+  "Github Repository: https://github.com/zenabawada/zenabawada.github.io/tree/main/Zenawada/Shopify"
+);
+UpdateResponses();
+
+function promptPreset() {
+  promptText.value =
+    "Find the most spoken language \n\nCanada: English \nGreece:";
+}
+
+function output(prompt, response) {
+  if (response != null) {
+    responsesArray.push({
+      promptValue: prompt,
+      responseValue: response["choices"][0]["text"].split(" ")[1],
+    });
+    localStorage.setItem("responsesCache", JSON.stringify(responsesArray));
+    UpdateResponses();
+  }
+}
+
+function UpdateResponses() {
+  while (
+    responsesContainer.firstChild != null &&
+    responsesContainer.childElementCount > 1
+  ) {
+    responsesContainer.removeChild(responsesContainer.firstChild);
+  }
+
+  for (let i = 0; i < responsesArray.length; i++) {
+    DrawResponse(responsesArray[i]);
+  }
+
+  if (responsesArray.length > 0) {
+    clearResponsesBtn.style.display = "block";
+  } else {
+    clearResponsesBtn.style.display = "none";
+  }
+
+  responsesContainer.style.display = "flex";
+}
+
+function DrawResponse(response) {
+  const node = responsesContainer.lastChild;
+  const clone = node.cloneNode(true);
+  const id = "response-box-" + responsesContainer.childElementCount;
+  clone.id = id;
+
+  responsesContainer.insertBefore(clone, responsesContainer.firstChild);
+  document
+    .getElementById(id)
+    .getElementsByClassName("promptSubmitted")[0].innerHTML =
+    response.promptValue;
+  document
+    .getElementById(id)
+    .getElementsByClassName("responseSubmitted")[0].innerHTML =
+    response.responseValue;
+  document
+    .getElementById(id)
+    .getElementsByClassName("responseRemoveButton")[0].onclick =
+    removeResponseBox;
+  document.getElementById(id).getElementsByClassName("tryButton")[0].onclick =
+    function () {
+      TryAgain(response);
+    };
+
+  function removeResponseBox() {
+    RemoveResponse(response);
+    $(document).ready(function () {
+      $(".responses-container div:first-child").css("animation", "none");
+    });
+  }
+}
+
+function ClearReponses() {
+  responsesArray = [];
+  localStorage.clear();
+  UpdateResponses();
+}
+
+function RemoveResponse(response) {
+  if (response != null && responsesArray.length >= 0) {
+    responsesArray.splice(responsesArray.indexOf(response), 1);
+    localStorage.setItem("responsesCache", JSON.stringify(responsesArray));
+    UpdateResponses();
+  }
+}
+
+function TryAgain(response) {
+  promptText.value = response.promptValue;
+}
+
+function SetWaitingResponseState(imWaiting) {
+  if (imWaiting) {
+    loadingModal.style.display = "flex";
+  } else {
+    loadingModal.style.display = "none";
+  }
+}
+
+const fetchAnswer = async (event) => {
+  if (!promptText.value) return;
+
+  // SetWaitingResponseState(true);
+  try {
+    const res = await fetch("http://localhost:3000", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        prompt: prompt.value,
+      }),
+    });
+    console.log(res);
+  } catch (error) {}
+  console.log(prompt.value);
+  event.preventDefault();
+};
+
+submitBtn.addEventListener("click", fetchAnswer, false);
+presetBtn.addEventListener("click", fetchAnswer, false);
+
+// submitBtn.onclick = function () {
+//   if (!promptText.value) return;
+
+//   SetWaitingResponseState(true);
+//   fetch(
+//     "https://afternoon-lowlands-42708.herokuapp.com/open_ai?prompt=" +
+//       promptText.value,
+//     {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//     }
+//   )
+//     .then((data) => data.json())
+//     .then((success) => {
+//       output(promptText.value, success);
+//       promptText.value = "";
+//       SetWaitingResponseState(false);
+//     })
+//     .catch(function (error) {
+//       console.log("Request failed", error);
+//       SetWaitingResponseState(false);
+//     });
+// };
+
+clearResponsesBtn.onclick = ClearReponses;
+presetBtn.onclick = promptPreset;
