@@ -1,6 +1,6 @@
 lsi: false
 safe: true
-source: [your repo's top level directory]
+source: 'zenabawada.github.io'
 incremental: false
 highlighter: rouge
 gist:
@@ -9,3 +9,4 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 theme: minima
+remote_theme: jekyll/minima
