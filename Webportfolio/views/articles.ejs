@@ -1,0 +1,41 @@
+<%- include('partials/head.ejs', {page: "Articles"}) %> 
+    <div class="main-wrap">
+        <!-- site header -->
+        <%- include('partials/header.ejs') %> 
+    <!-- end site header -->
+
+        <!-- main content -->
+        <div id="content" class="content">
+            <article class="project-grid project-grid-design">
+                <div class="articles-wrapper">
+                    <h1 class="projects-title articles-title">Articles</h1>
+                    <p>Latest articles published</p>
+                    <div class="articles">
+                        <% items.forEach(item => { %>
+                            <div class="article">
+                                <div class="details">
+                                    <a href="<%= item.link %>" target="_blank"><h2><%= item.title %></h2></a>
+                                    <div class="html" style="display: none;"><%= item.content %></div>
+                                    <a href="<%= item.link %>" target="_blank"><div class="description"></div></a>
+                                        <% let categories = item.categories %> 
+                                        <% for( let i = 0; i < categories.length; i++ ) { %>
+                                            <% let capitalLetter = categories[i][0].toUpperCase() %> 
+                                            <% let newCategories = capitalLetter + categories[i].substring(1) %> 
+                                            <%  categories[i] = newCategories %> 
+                                        <% } %>                                    
+                                        <div class="article-categories"><span><%= categories.join(", ") %> </span></div>
+                                        
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+                
+            </article>
+        </div>
+        <!-- end main content -->
+        
+        <!-- footer -->
+        <%- include('partials/footer.ejs') %> 
+    </div>
+<%- include("partials/foot.ejs") %> 
