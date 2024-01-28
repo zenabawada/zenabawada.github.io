@@ -17,9 +17,11 @@ export default {
   computed: {
     map() {
       let data = this.info;
+
       let countryDict = {};
       //   let countryDict2 = {};
       let countries = this.countriesInit;
+
       for (let j = 0; j < data.length; j++) {
         let country;
         let value = data[j].value.numeric;
@@ -83,6 +85,7 @@ export default {
             // console.log("LOADED");
             map.interactivity().zoomOnMouseWheel(true);
             let zoomController = anychart.ui.zoom();
+
             //   zoomController.target();
             zoomController.render(map);
             // create choropleth series
@@ -118,7 +121,6 @@ export default {
             //initiate map drawing
             let colorRange = map.colorRange();
             colorRange.enabled(true);
-            // var cr = map.colorRange(true);
             colorRange.orientation("right");
             colorRange.length(200);
             map.draw();
@@ -153,7 +155,7 @@ export default {
   mounted() {
     const fetchData = async () => {
       await axios
-        .get("/api/gho/athena/api/GHO/SI_POV_DAY1.json", {
+        .get("api/gho/athena/api/GHO/SI_POV_DAY1.json", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
