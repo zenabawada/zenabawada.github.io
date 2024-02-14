@@ -1,15 +1,13 @@
 "use strict";
 
 let mobileNavIcon = document.getElementById("mobileNavIcon");
-let closeBtn = document.getElementById("closeBtn");
-let navContainer = document.getElementById("navContainer");
-let mainWrap = document.getElementById("mainWrap");
+let mobileNavPanel = document.querySelector("#navContainer");
+let siteLinks = document.querySelectorAll(".nav-item");
 let content = document.getElementById("content");
 let aboutPic = document.getElementById("aboutPic");
-let siteLinks = document.querySelectorAll(".nav-item");
-
 // Footer Hover Settings
 let footerList = document.querySelectorAll(".footer-wrap__item");
+let formLoader = document.querySelector("#formLoader");
 
 for (const item of footerList) {
   item.addEventListener("mouseenter", showOpacity, false);
@@ -30,22 +28,51 @@ function hideOpacity() {
 }
 
 // Responsive Nav
+// Open Nav
 mobileNavIcon.onclick = function () {
-  navContainer.className += " responsive";
+  if (mobileNavIcon.classList.contains("open")) {
+    closeNav();
+  } else {
+    mobileNavPanel.classList.add("responsive");
+    mobileNavIcon.classList.add("open");
+    document.body.classList.add("fixed-scroll");
+    // document.querySelector("#mainWrap").classList.add("overlay");
+
+    // window.addEventListener("popstate", (e) => {
+    //   e.preventDefault();
+    //   console.log("test");
+    //   closeNav();
+    // });
+
+    window.onhashchange = (e) => {
+      e.preventDefault();
+      closeNav();
+    };
+  }
 };
 
-for (let i = 0; i < siteLinks.length; i++) {
-  siteLinks[i].onclick = () => {
-    navContainer.className = "nav-container";
-  };
+if (mobileNavIcon.classList.contains("open")) {
 }
 
+// Close Nav
 function closeNav() {
-  navContainer.className = "nav-container";
+  mobileNavPanel.classList.remove("responsive");
+  mobileNavIcon.classList.remove("open");
+  document.body.classList.remove("fixed-scroll");
+  // document.querySelector("#mainWrap").classList.remove("overlay");
 }
 
-closeBtn.onclick = closeNav;
+for (let i = 0; i < siteLinks.length; i++) {
+  siteLinks[i].onclick = closeNav;
+}
+
 content.onclick = closeNav;
+
+// for (let i = 0; i < siteLinks.length; i++) {
+//   siteLinks[i].onclick = () => {
+//     navContainer.className = "nav-container";
+//   };
+// }
 
 // Nav Scroll
 window.addEventListener("scroll", function () {
@@ -100,5 +127,36 @@ function scrollToTop() {
   });
 }
 
-scrollToTopBtn.addEventListener("click", scrollToTop);
-document.addEventListener("scroll", scroll);
+if (scrollToTopBtn) {
+  scrollToTopBtn.addEventListener("click", scrollToTop);
+  document.addEventListener("scroll", scroll);
+}
+
+$(function () {
+  $("#sendEmailForm").on("submit", function (e) {
+    e.preventDefault();
+    $("#formLoader").show();
+
+    // Serialize form data
+    var formData = $(this).serialize();
+
+    // Send form data to the server
+    $.ajax({
+      type: "POST",
+      url: "/send-email",
+      data: formData,
+      success: function (response) {
+        // Update the message div with the response from the server
+        $("#formMessage").text(response);
+        $("#sendEmailForm").hide();
+      },
+      error: function (error) {
+        console.log(error);
+        $("#formMessage").text("Error sending email. Please try again later.");
+      },
+      complete: function () {
+        $("#formLoader").hide();
+      },
+    });
+  });
+});

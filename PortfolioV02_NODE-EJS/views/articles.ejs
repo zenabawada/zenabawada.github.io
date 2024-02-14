@@ -6,10 +6,9 @@
 
         <!-- main content -->
         <div id="content" class="content">
-            <article class="project-grid">
-                <!-- header -->
-                <header class="project-page-header">
-                    <h1 class="projects-title">Articles</h1>
+            <article class="project-grid project-grid-design">
+                <div class="articles-wrapper">
+                    <h1 class="projects-title articles-title">Articles</h1>
                     <p>Latest articles published</p>
                     <div class="articles">
                         <% items.forEach(item => { %>
@@ -18,7 +17,7 @@
                                     <a href="<%= item.link %>" target="_blank"><h2><%= item.title %></h2></a>
                                     <div class="html" style="display: none;"><%= item.content %></div>
                                     <a href="<%= item.link %>" target="_blank"><div class="description"></div></a>
-                                        <% let categories = item.category %> 
+                                        <% let categories = item.categories %> 
                                         <% for( let i = 0; i < categories.length; i++ ) { %>
                                             <% let capitalLetter = categories[i][0].toUpperCase() %> 
                                             <% let newCategories = capitalLetter + categories[i].substring(1) %> 
@@ -30,7 +29,7 @@
                             </div>
                         <% }) %>
                     </div>
-                </header>
+                </div>
                 
             </article>
         </div>
